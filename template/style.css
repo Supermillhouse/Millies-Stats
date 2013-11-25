@@ -1,0 +1,488 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+	font-family: 'Conv_big_noodle_titling';
+	src: url('fonts/big_noodle_titling.eot');
+	src: local('☺'), url('fonts/big_noodle_titling.woff') format('woff'), url('fonts/big_noodle_titling.ttf') format('truetype'), url('fonts/big_noodle_titling.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+ {
+  font-family: 'purista';
+  src: url('fonts/purista_medium.otf');
+ 	font-weight: normal;
+	font-style: normal;
+ } 
+
+
+
+
+body{
+	margin:0;
+	background-image:url(images/bg.jpg);
+	background-repeat:no-repeat;
+	background-position:top center;
+	background-color:#070300;
+/*	font-family: 'Conv_big_noodle_titling';*/
+  font-family: 'purista';
+	color:#FFF;
+	font-size:18px;
+/*	letter-spacing:1.2px;*/
+}
+
+#headspace{
+	width:100%;
+	height:160px;
+}
+
+img{
+	border:none;
+}
+
+#menu{
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url(images/top.png);
+	width:1142px;
+	height:61px;
+	text-align:center;
+}
+
+.menuin{
+}
+
+#menu a{
+	text-decoration:none;
+	color:#FFF;
+	font-size:30px;
+	line-height:50px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+#menu a:hover{
+	color:#84aace;
+}
+
+.spacer{
+	clear:both;
+	width:100%;
+	min-height:30px;
+	text-align:center;
+	color:#f8ba27;
+}
+
+.spacer a{
+	text-decoration:none;
+	color:#f8ba27;
+	padding-left:10px; padding-right:10px;
+}
+
+#body{
+	clear:both;
+	background-image:url(images/bg.png);
+	border:1px solid #fff;
+	width:1250px;
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow:0px 0px 15px #000;
+	-moz-box-shadow:0px 0px 15px #000;
+	-webkit-box-shadow:0px 0px 15px #000;
+}
+
+#body a{
+	text-decoration:none;
+	color:#CCC;
+}
+
+.cmess td, th{
+	border:1px solid #313131 !important;
+}
+
+
+.serverdata{
+	float:right;
+	width:100%;
+	color:#FFF;
+	margin-bottom:1px solid #fff;
+}
+
+.serverdatal{
+/*	width:250px;
+*/	float:left;
+	border-right:1px solid #999;
+}
+
+.serverdatar{
+	width:60%;
+	float:right;
+}
+
+.servername{
+	background-image:url(images/top.png);
+	background-position:top center;
+	width:100%;
+	height:61px;
+	float:left;
+	color:#FFF;
+	text-align:center;
+	font-size:26px;
+	line-height:46px;
+}
+
+.serverdatastat{
+	clear:both;
+	width:100%;
+	float:left;
+	color:#FFF;
+	font-size:17px;
+}
+
+.result{
+	color:#84aace;
+}
+
+.trackersname{
+	width:100%;
+	height:61px;
+	float:left;
+	clear:both;
+	background-image:url(images/top.png);
+	background-repeat:no-repeat;
+	background-position:top center;
+	text-align:center;
+	font-size:20px;
+	line-height:50px;
+}
+
+.bodytext{
+	width:100%;
+	clear:both;
+	display: block;
+}
+
+.bodytext a{
+  color:#fff;
+/*	color:#fff !important;*/
+}
+
+#suname{
+	background-image:url(images/bg.png);
+	width:200px;
+	position:absolute;
+	/*left:575px;*/
+	text-align:justify;
+	margin-left:-101px;
+	left:50%;
+}
+
+#footer{
+	width:1142px;
+	background-repeat:no-repeat;
+	background-position:top center;
+	color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:14px;
+	padding:0px;
+}
+
+#footer a{
+	text-decoration:underline;
+	color:#d9d9d9;
+}
+
+#installerror{
+	background-image:url(images/bg.png);
+	z-index:1000;
+	position:absolute;
+	width:100%;
+	height:100%;
+	text-align:center;
+	line-height:4000%;
+	font-size:22px;
+	color:#F00;
+	opacity:0.9;
+}
+
+@charset "UTF-8";
+
+/* SpryTabbedPanels.css - version 0.6 - Spry Pre-Release 1.6.1 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/* Horizontal Tabbed Panels
+ *
+ * The default style for a TabbedPanels widget places all tab buttons
+ * (left aligned) above the content panel.
+ */
+
+/* This is the selector for the main TabbedPanels container. For our
+ * default style, this container does not contribute anything visually,
+ * but it is floated left to make sure that any floating or clearing done
+ * with any of its child elements are contained completely within the
+ * TabbedPanels container, to minimize any impact or undesireable
+ * interaction with other floated elements on the page that may be used
+ * for layout.
+ *
+ * If you want to constrain the width of the TabbedPanels widget, set a
+ * width on the TabbedPanels container. By default, the TabbedPanels widget
+ * expands horizontally to fill up available space.
+ *
+ * The name of the class ("TabbedPanels") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabbedPanels container.
+ */
+.TabbedPanels {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	clear: none;
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+
+/* This is the selector for the TabGroup. The TabGroup container houses
+ * all of the tab buttons for each tabbed panel in the widget. This container
+ * does not contribute anything visually to the look of the widget for our
+ * default style.
+ *
+ * The name of the class ("TabbedPanelsTabGroup") used in this selector is not
+ * necessary to make the widget function. You can use any class name you
+ * want to style the TabGroup container.
+ */
+.TabbedPanelsTabGroup {
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* This is the selector for the TabbedPanelsTab. This container houses
+ * the title for the panel. This is also the tab "button" that the user clicks
+ * on to activate the corresponding content panel so that it appears on top
+ * of the other tabbed panels contained in the widget.
+ *
+ * For our default style, each tab is positioned relatively 1 pixel down from
+ * where it wold normally render. This allows each tab to overlap the content
+ * panel that renders below it. Each tab is rendered with a 1 pixel bottom
+ * border that has a color that matches the top border of the current content
+ * panel. This gives the appearance that the tab is being drawn behind the
+ * content panel.
+ *
+ * The name of the class ("TabbedPanelsTab") used in this selector is not
+ * necessary to make the widget function. You can use any class name you want
+ * to style this tab container.
+ */
+.TabbedPanelsTab {
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 10px 40px 10px;
+	margin: 0px 1px 0px 0px;
+	font-weight:bold;
+	font-size:20px;
+	background-image:url(../template/images/socbar.png);
+	list-style: none;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #999;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+}
+
+/* This selector is an example of how to change the appearnce of a tab button
+ * container as the mouse enters it. The class "TabbedPanelsTabHover" is
+ * programatically added and removed from the tab element as the mouse enters
+ * and exits the container.
+ */
+.TabbedPanelsTabHover {
+	background-image:url(../template/images/bg.png);
+}
+
+/* This selector is an example of how to change the appearance of a tab button
+ * container after the user has clicked on it to activate a content panel.
+ * The class "TabbedPanelsTabSelected" is programatically added and removed
+ * from the tab element as the user clicks on the tab button containers in
+ * the widget.
+ *
+ * As mentioned above, for our default style, tab buttons are positioned
+ * 1 pixel down from where it would normally render. When the tab button is
+ * selected, we change its bottom border to match the background color of the
+ * content panel so that it looks like the tab is part of the content panel.
+ */
+.TabbedPanelsTabSelected {
+	background-image:url(../template/images/bg.png);
+	border-bottom: none;
+}
+
+/* This selector is an example of how to make a link inside of a tab button
+ * look like normal text. Users may want to use links inside of a tab button
+ * so that when it gets focus, the text *inside* the tab button gets a focus
+ * ring around it, instead of the focus ring around the entire tab.
+ */
+.TabbedPanelsTab a {
+	color: black;
+	text-decoration: none;
+}
+
+/* This is the selector for the ContentGroup. The ContentGroup container houses
+ * all of the content panels for each tabbed panel in the widget. For our
+ * default style, this container provides the background color and borders that
+ * surround the content.
+ *
+ * The name of the class ("TabbedPanelsContentGroup") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the ContentGroup container.
+ */
+.TabbedPanelsContentGroup {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+}
+
+/* This is the selector for the Content panel. The Content panel holds the
+ * content for a single tabbed panel. For our default style, this container
+ * provides some padding, so that the content is not pushed up against the
+ * widget borders.
+ *
+ * The name of the class ("TabbedPanelsContent") used in this selector is
+ * not necessary to make the widget function. You can use any class name you
+ * want to style the Content container.
+ */
+.TabbedPanelsContent {
+	background-image:url(../template/images/bg.png);
+	overflow: hidden;
+	padding: 4px;
+}
+
+/* This selector is an example of how to change the appearnce of the currently
+ * active container panel. The class "TabbedPanelsContentVisible" is
+ * programatically added and removed from the content element as the panel
+ * is activated/deactivated.
+ */
+.TabbedPanelsContentVisible {
+}
+
+/* Vertical Tabbed Panels
+ *
+ * The following rules override some of the default rules above so that the
+ * TabbedPanels widget renders with its tab buttons along the left side of
+ * the currently active content panel.
+ *
+ * With the rules defined below, the only change that will have to be made
+ * to switch a horizontal tabbed panels widget to a vertical tabbed panels
+ * widget, is to use the "VTabbedPanels" class on the top-level widget
+ * container element, instead of "TabbedPanels".
+ */
+
+.VTabbedPanels {
+	overflow: hidden;
+	zoom: 1;
+}
+
+/* This selector floats the TabGroup so that the tab buttons it contains
+ * render to the left of the active content panel. A border is drawn around
+ * the group container to make it look like a list container.
+ */
+.VTabbedPanels .TabbedPanelsTabGroup {
+	float: left;
+	width: 10em;
+	height: 20em;
+	background-color: #EEE;
+	position: relative;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+/* This selector disables the float property that is placed on each tab button
+ * by the default TabbedPanelsTab selector rule above. It also draws a bottom
+ * border for the tab. The tab button will get its left and right border from
+ * the TabGroup, and its top border from the TabGroup or tab button above it.
+ */
+.VTabbedPanels .TabbedPanelsTab {
+	float: none;
+	margin: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+/* This selector disables the float property that is placed on each tab button
+ * by the default TabbedPanelsTab selector rule above. It also draws a bottom
+ * border for the tab. The tab button will get its left and right border from
+ * the TabGroup, and its top border from the TabGroup or tab button above it.
+ */
+.VTabbedPanels .TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: solid 1px #999;
+}
+
+/* This selector floats the content panels for the widget so that they
+ * render to the right of the tabbed buttons.
+ */
+.VTabbedPanels .TabbedPanelsContentGroup {
+	clear: none;
+	float: left;
+	padding: 0px;
+	width: 30em;
+	height: 20em;
+}
+
+/* Styles for Printing */
+@media print {
+.TabbedPanels {
+	overflow: visible !important;
+}
+.TabbedPanelsContentGroup {
+	display: block !important;
+	overflow: visible !important;
+	height: auto !important;
+}
+.TabbedPanelsContent {
+	overflow: visible !important;
+	display: block !important;
+	clear:both !important;
+}
+.TabbedPanelsTab {
+	 overflow: visible !important;
+	 display: block !important;
+	 clear:both !important;
+}
+}
+
+.team1{
+	background-image:url(images/sq1.png);
+}
+.team2{
+	background-image:url(images/sq2.png);
+}
+.team3{
+	background-image:url(images/sq1.png);
+}
+.team4{
+	background-image:url(images/sq2.png);
+}
+.team5{
+	background-image:url(images/sq1.png);
+}
+.team6{
+	background-image:url(images/sq2.png);
+}
+.team7{
+	background-image:url(images/sq1.png);
+}
+.team8{
+	background-image:url(images/sq2.png);
+}
+.team9{
+	background-image:url(images/sq1.png);
+}
