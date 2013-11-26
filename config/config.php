@@ -128,6 +128,6 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Server Stat By: <a href='http://sourceforge.net/projects/bf3conn/' target='_blank'>BF3_Conn</a> | Modified By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.0</h3>");
+	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Server Stat By: <a href='http://sourceforge.net/projects/bf3conn/' target='_blank'>BF3_Conn</a> | Modified By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.1</h3>");
 }
 ?>

@@ -72,7 +72,9 @@ if(isset($_GET['pid']) && is_numeric($_GET['pid']))
 						<td>$lng_playerstat_lastp ".$playerdata['12']."</td>
 					</tr>
 					<tr>
-						<td colspan='3' style='text-align:center;'><a href='http://battlelog.battlefield.com/bf4/user/".$playerdata['0']."/' target='_blank'><img src=\"template/images/blogbtn.png\" width='200px' /></a></td>
+						<td style='text-align:center;'><a href='http://battlelog.battlefield.com/bf4/user/".$playerdata['0']."/' target='_blank'><img src=\"template/images/blogbtn.png\" width='200px' /></a></td>
+            <td></td>
+						<td style='text-align:center;'><a href='http://bf4stats.com/pc/".$playerdata['0']."/' target='_blank'><img src=\"template/images/bf4stats.png\" width='200px' /></a></td>
 					</tr>
 				</table>
 			</td>
