@@ -6,6 +6,10 @@ After install, delete the install.php file, before using the system.
 
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
+v0.0.1.3
+
+-Added BF4 stats link
+-Changed index totals to be for current server
 
 v0.0.1.0
 
