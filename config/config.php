@@ -28,8 +28,8 @@ else
 	}
 	$scoreboard_players = mysqli_query($dbconn,"SELECT `TeamID` FROM `".$sqlprefix."currentplayers".$suffix."` WHERE `ServerID` = '".SWID."' ORDER BY TeamID ASC");
 //  $teamscore=mysqli_fetch_array(mysqli_query($dbconn, "SELECT ServerID, Score FROM ".$sqlprefix."teamscores".$suffix." WHERE `TeamID`='".SWID."'"));
-	$dogtags=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`Count`) FROM `".$sqlprefix."dogtags".$suffix."`"));
-	$score=mysqli_fetch_array(mysqli_query($dbconn, "SELECT COUNT(`StatsID`), SUM(`Score`), SUM(`Headshots`), SUM(`Kills`), SUM(`Deaths`) FROM `".$sqlprefix."playerstats".$suffix."`"));
+	$dogtags=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(".$sqlprefix."dogtags".$suffix.".Count) FROM ".$sqlprefix."dogtags".$suffix." INNER JOIN ".$sqlprefix."server_player".$suffix." ON ".$sqlprefix."dogtags".$suffix.".KillerID=".$sqlprefix."server_player".$suffix.".StatsID AND ".$sqlprefix."server_player".$suffix.".ServerID = '".SWID."'"));
+	$score=mysqli_fetch_array(mysqli_query($dbconn, "SELECT `CountPlayers`, `SumScore`, `SumHeadshots`, `SumKills`, `SumDeaths` FROM `".$sqlprefix."server_stats".$suffix."` WHERE `ServerID`='".SWID."'")); 
 	switch($map)
 	{
 		case "MP_001": $sname="Grand Bazaar"; $simage="mp_001"; break;
@@ -128,6 +128,6 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Server Stat By: <a href='http://sourceforge.net/projects/bf3conn/' target='_blank'>BF3_Conn</a> | Modified By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.1</h3>");
+	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Server Stat By: <a href='http://sourceforge.net/projects/bf3conn/' target='_blank'>BF3_Conn</a> | Modified By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.3</h3>");
 }
 ?>
