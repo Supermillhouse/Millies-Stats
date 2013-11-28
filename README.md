@@ -8,45 +8,45 @@ If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
 v0.0.1.3
 
--Added BF4 stats link
+- Added BF4 stats link
 
--Changed index totals to be for current server
+- Changed index totals to be for current server
 
 v0.0.1.0
 
 Home page:
 
--Live server statistic
+- Live server statistic
 
--Top server statistic
+- Top server statistic
 
--Clan website
+- Clan website
 
--Server Battlelog site
+- Server Battlelog site
 
 Players Page:
 
--All players statistics
+- All players statistics
 
--Order by all data
+- Order by all data
 
--Search player by name
+- Search player by name
 
 Playerstat page:
 
--All type of ranks
+- All type of ranks
 
--Kills, Deaths, K/D etc...
+- Kills, Deaths, K/D etc...
 
--Weapons statistics WIP
+- Weapons statistics WIP
 
--Battlelog profile
+- Battlelog profile
 
 Maps page:
 
--List avarage data of maps
+- List avarage data of maps
 
--Show map image
+- Show map image
 
 Weapons
 
@@ -54,6 +54,6 @@ Weapons
 
 Messages
 
--List all messages
+- List all messages
 
--Search chat player or message
+- Search chat player or message
