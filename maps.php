@@ -42,10 +42,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "MP_Siege": $sname="Siege of Shanghai"; $simage="mp_Siege"; break;
 		case "MP_TheDish": $sname="Rogue Transmission"; $simage="mp_TheDish"; break;
 		case "MP_Tremors": $sname="Dawnbreaker"; $simage="mp_Tremors"; break;
-		case "XP1_001": $sname="Silk Road"; $simage="xp_001"; break;
-		case "XP1_002": $sname="Altai Range"; $simage="xp_002"; break;
-		case "XP1_003": $sname="Guilin Peaks"; $simage="xp_003"; break;
-		case "XP1_004": $sname="Dragon Pass"; $simage="xp_004"; break;
+		case "XP1_001": $sname="Silk Road"; $simage="xp1_001"; break;
+		case "XP1_002": $sname="Altai Range"; $simage="xp1_002"; break;
+		case "XP1_003": $sname="Guilin Peaks"; $simage="xp1_003"; break;
+		case "XP1_004": $sname="Dragon Pass"; $simage="xp1_004"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"
