@@ -32,35 +32,6 @@ while($mapdata=mysqli_fetch_array($maps))
 	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`), MIN(`MinPlayers`), MAX(`MaxPlayers`), AVG(`AvgPlayers`), MAX(`PlayersJoinedServer`), MAX(`PlayersLeftServer`), MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."';"));
 	switch($mapdata['0'])
 	{
-		case "MP_001": $sname="Grand Bazaar"; $simage="mp_001"; break;
-		case "MP_003": $sname="Tehran Highway"; $simage="mp_003"; break;
-		case "MP_007": $sname="Caspian Border"; $simage="mp_007"; break;
-		case "MP_011": $sname="Seine Crossing"; $simage="mp_011"; break;
-		case "MP_012": $sname="Operation Firestorm"; $simage="mp_012"; break;
-		case "MP_013": $sname="Damavand Peak"; $simage="mp_013"; break;
-		case "MP_017": $sname="Noshahr Canals"; $simage="mp_017"; break;
-		case "MP_018": $sname="Kharg Island"; $simage="mp_018"; break;
-		case "MP_Subway": $sname="Operation Metro"; $simage="mp_subway"; break;
-		case "XP1_001": $sname="Strike At Karkand"; $simage="xp1_001"; break;
-		case "XP1_002": $sname="Gulf of Oman"; $simage="xp1_002"; break;
-		case "XP1_003": $sname="Sharqi Peninsula"; $simage="xp1_003"; break;
-		case "XP1_004": $sname="Wake Island"; $simage="xp1_004"; break;
-		case "XP2_Factory": $sname="Scrapmetal"; $simage="xp2_factory"; break;
-		case "XP2_Office": $sname="Operation 925"; $simage="xp2_office"; break;
-		case "XP2_Palace": $sname="Donya Fortress"; $simage="xp2_palace"; break;
-		case "XP2_Skybar": $sname="Ziba Tower"; $simage="xp2_skybar"; break;
-		case "XP3_Desert": $sname="Bandar Desert"; $simage="xp3_desert"; break;
-		case "XP3_Alborz": $sname="Alborz Mountains"; $simage="xp3_alborz"; break;
-		case "XP3_Shield": $sname="Armored Shield"; $simage="xp3_shield"; break;
-		case "XP3_Valley": $sname="Death Valley"; $simage="xp3_valley"; break;
-		case "XP4_Quake": $sname="Epicenter"; $simage="xp4_quake"; break;
-		case "XP4_FD": $sname="Markaz Monolith"; $simage="xp4_fd"; break;
-		case "XP4_Parl": $sname="Azadi Palace"; $simage="xp4_parl"; break;
-		case "XP4_Rubble": $sname="Talah Market"; $simage="xp4_rubble"; break;
-    case "XP5_001": $sname="Operation Riverside"; $simage="xp5_001"; break;
-    case "XP5_002": $sname="Nebandan Flats"; $simage="xp5_002"; break;
-    case "XP5_003": $sname="Kiasar Railroad"; $simage="xp5_003"; break;
-    case "XP5_004": $sname="Sabalan Pipeline"; $simage="xp5_004"; break;
 		case "MP_Abandoned": $sname="Zavod 311"; $simage="mp_Abandoned"; break;
 		case "MP_Damage": $sname="Lancang Dam"; $simage="mp_Damage"; break;
 		case "MP_Flooded": $sname="Flood Zone"; $simage="mp_Flooded"; break;
@@ -71,6 +42,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "MP_Siege": $sname="Siege of Shanghai"; $simage="mp_Siege"; break;
 		case "MP_TheDish": $sname="Rogue Transmission"; $simage="mp_TheDish"; break;
 		case "MP_Tremors": $sname="Dawnbreaker"; $simage="mp_Tremors"; break;
+		case "XP1_001": $sname="Silk Road"; $simage="xp_001"; break;
+		case "XP1_002": $sname="Altai Range"; $simage="xp_002"; break;
+		case "XP1_003": $sname="Guilin Peaks"; $simage="xp_003"; break;
+		case "XP1_004": $sname="Dragon Pass"; $simage="xp_004"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"
