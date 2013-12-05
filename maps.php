@@ -50,7 +50,7 @@ while($mapdata=mysqli_fetch_array($maps))
 	}
 	echo"
 	<tr class='cmess'>
-		<td width='250px'><img src='./maps/$simage.jpg' width='250' height='200'/></td>
+		<td width='250px'><img src='./maps/$simage.jpg' width='445' height='250'/></td>
 		<td valign='top'>
 		<div class='servername'>$sname</div>
 		<div class='serverdatastat'>
