@@ -6,6 +6,10 @@ After install, delete the install.php file, before using the system.
 
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
+v0.0.1.4
+
+- Add China Rising maps
+
 v0.0.1.3
 
 - Added BF4 stats link
