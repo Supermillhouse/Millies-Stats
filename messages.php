@@ -103,7 +103,8 @@ include('config/languages/'.LANG.'.php');
 			{
 				echo"
 				<tr class='cmess'>
-					<th>".$ndata['4']."</th><th>".$ndata['5']."</th><th>".$ndata['1']."</th><th>".$ndata['3']."</th>
+					<th>".$ndata['logSoldierName']."</th><th>".$ndata['logMessage']."</th><th>".$ndata['logDate']."</th><th>".$ndata['logSubset']."</th>
+
 				</tr>
 				";
 			}
