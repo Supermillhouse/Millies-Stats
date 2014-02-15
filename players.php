@@ -69,7 +69,7 @@ include('config/languages/'.LANG.'.php');
 				{
 					$order=$_GET['order'];
 				}
-					$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ".mysqli_real_escape_string($dbconn, $order)." ".mysqli_real_escape_string($dbconn, $_GET['where'])." LIMIT 1000");
+					$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ".mysqli_real_escape_string($dbconn, $order)." ".mysqli_real_escape_string($dbconn, $_GET['where'])." LIMIT 2000");
 			}
 			$rowsPerPage=50;
 			$pageNum="1";
