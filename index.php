@@ -425,7 +425,7 @@ header('Refresh: 30');
 	{
 		echo"
 		<tr>
-			<th>".$chatdata['4']."</th><th>".$chatdata['5']."</th><th>".$chatdata['1']."</th><th>".$chatdata['3']."</th>
+			<th>".$chatdata['logSoldierName']."</th><th>".$chatdata['logMessage']."</th><th>".$chatdata['logDate']."</th><th>".$chatdata['logSubset']."</th>
 		</tr>
 		";	
 	}
