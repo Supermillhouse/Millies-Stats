@@ -6,6 +6,14 @@ After install, delete the install.php file, before using the system.
 
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
+v0.0.1.6
+
+- Fix page limit when players were sorted
+
+v0.0.1.5
+
+- Change to footer note and update messages to work with Adkats
+
 v0.0.1.4
 
 - Add China Rising maps
