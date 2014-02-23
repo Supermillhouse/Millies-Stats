@@ -49,7 +49,9 @@ include('config/languages/'.LANG.'.php');
 			$counter=0;
 			if(!isset($_GET['order']))
 			{
-				$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ps.Score DESC LIMIT 2000");
+//				$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ps.Score DESC LIMIT 2000");
+				$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ps.Score DESC");
+
 			}
 			else
 			{
@@ -69,7 +71,9 @@ include('config/languages/'.LANG.'.php');
 				{
 					$order=$_GET['order'];
 				}
-					$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ".mysqli_real_escape_string($dbconn, $order)." ".mysqli_real_escape_string($dbconn, $_GET['where'])." LIMIT 2000");
+//					$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ".mysqli_real_escape_string($dbconn, $order)." ".mysqli_real_escape_string($dbconn, $_GET['where'])." LIMIT 2000");
+					$fullquery=mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY ".mysqli_real_escape_string($dbconn, $order)." ".mysqli_real_escape_string($dbconn, $_GET['where']));
+
 			}
 			$rowsPerPage=50;
 			$pageNum="1";
@@ -81,6 +85,7 @@ include('config/languages/'.LANG.'.php');
 			}
 			$offset = ($pageNum - 1) * $rowsPerPage;
 			$maxPage = ceil($fulllistc/$rowsPerPage);
+			$lastPage = 40;
 			if(!isset($_GET['order']))
 			{
 				$glist=sprintf("SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.ServerID=".SWID." ORDER BY `Score` DESC LIMIT $offset,$rowsPerPage;");
@@ -93,7 +98,12 @@ include('config/languages/'.LANG.'.php');
 			$glistcount=mysqli_num_rows($gres);
 			$self = $_SERVER['PHP_SELF'];
 			$nav  = '';
-			for($page = 1; $page <= $maxPage; $page++)
+			$page = $pageNum - (($lastPage / 2) - 1);
+			if ($page + $lastPage > $maxPage) $page = $maxPage - ($lastPage - 1);
+			if ($page < 1) $page = 1;
+//			for($page = 1; $page <= $maxPage; $page++)
+			for($page; ($page <= $maxPage) && (($page < $pageNum + 1 + ($lastPage / 2)) || ($page < $lastPage + 1)); $page++)
+
 			{
    			if ($page == $pageNum)
    			{
@@ -141,7 +151,7 @@ include('config/languages/'.LANG.'.php');
 			}
 			else
 			{
-   				$next = " <a href=\"$self?order=".$_GET['order']."&where=".$_GET['where']."&page=$page\">>></a> ";
+   			$next = " <a href=\"$self?order=".$_GET['order']."&where=".$_GET['where']."&page=$page\">>></a> ";
 				$last = " <a href=\"$self?order=".$_GET['order']."&where=".$_GET['where']."&page=$maxPage\">$lng_pages_lase</a> ";
 			}
 			}
@@ -176,7 +186,7 @@ include('config/languages/'.LANG.'.php');
     </table>
     <?php
 	echo"
-			<div class='numbers'><center>$lng_pages_full: $first $prev $nav $next $last</center></div>
+			<div class='numbers'><center>$lng_pages_full $first $prev $nav $next $last</center></div>
 			</div>
 			";
 			?>
