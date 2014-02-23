@@ -46,6 +46,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "XP1_002": $sname="Altai Range"; $simage="xp1_002"; break;
 		case "XP1_003": $sname="Guilin Peaks"; $simage="xp1_003"; break;
 		case "XP1_004": $sname="Dragon Pass"; $simage="xp1_004"; break;
+		case "XP0_Caspian": $sname="Caspian Border 2014"; $simage="xp0_Caspian"; break;
+		case "XP0_Firestorm": $sname="Firestorm 2014"; $simage="xp0_Firestorm"; break;
+		case "XP0_Metro": $sname="Operation Metro 2014"; $simage="xp0_Metro"; break;
+		case "XP0_Oman": $sname="Gulf Of Oman 2014"; $simage="xp0_Oman"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"

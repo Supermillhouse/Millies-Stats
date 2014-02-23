@@ -46,6 +46,10 @@ else
 		case "XP1_002": $sname="Altai Range"; $simage="xp1_002"; break;
 		case "XP1_003": $sname="Guilin Peaks"; $simage="xp1_003"; break;
 		case "XP1_004": $sname="Dragon Pass"; $simage="xp1_004"; break;
+		case "XP0_Caspian": $sname="Caspian Border 2014"; $simage="xp0_Caspian"; break;
+		case "XP0_Firestorm": $sname="Firestorm 2014"; $simage="xp0_Firestorm"; break;
+		case "XP0_Metro": $sname="Operation Metro 2014"; $simage="xp0_Metro"; break;
+		case "XP0_Oman": $sname="Gulf Of Oman 2014"; $simage="xp0_Oman"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -103,6 +107,6 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.6</h3>");
+	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.7</h3>");
 }
 ?>

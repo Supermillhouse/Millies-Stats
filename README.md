@@ -6,6 +6,10 @@ After install, delete the install.php file, before using the system.
 
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
+v0.0.1.7
+
+- Added Second Assault
+
 v0.0.1.6
 
 - Fix page limit when players were sorted

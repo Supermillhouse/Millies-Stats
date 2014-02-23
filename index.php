@@ -186,7 +186,7 @@ header('Refresh: 30');
 				if($mode_shown == 0)
 				{
 					echo "
-					<table width='60%' align='center' border='0'>
+					<table width='80%' align='center' border='0'>
 					<tr>
 					<td width='25%' style='text-align:right'> &nbsp; &nbsp; <font class='result'>" . $lng_mode . ":</font></td>
 					<td width='25%' style='text-align:left'> &nbsp; &nbsp; <font class='result'>" . SMODE . "</font></td>
@@ -288,7 +288,7 @@ header('Refresh: 30');
 					<th class='team1' width='65px' style='text-align:left'>" . $lng_player_point . "</th>
 					<th class='team1' width='45px' style='text-align:left'>" . $lng_player_kills . "</th>
 					<th class='team1' width='45px' style='text-align:left'>" . $lng_player_deaths . "</th>
-					<th class='team1' width='70px' style='text-align:left'>" . $lng_player_squad . "</th>
+					<th class='team1' width='100px' style='text-align:left'>" . $lng_player_squad . "</th>
 					";
 				}
 				echo'</tr>';
@@ -347,20 +347,20 @@ header('Refresh: 30');
   }
 	echo "
 	<tr>
-	<td class='result' style='text-align:right" . $highlight . "'>" . $count . ":&nbsp; </td>";
+	<td class='result' style='text-align:right; font-size:16px" . $highlight . "'>" . $count . ":&nbsp; </td>";
 	
 	
 	// if player ID is not 'Unknown', make it a link
 	if($player_id != "Unknown")
 	{
-	echo	"<td style='text-align:left" . $highlight . "'> &nbsp; <a " . $highlightlink . " href='playerstat.php?pid=" .$stats_id. "'>" . $player . "</a></td>";
+	echo	"<td style='text-align:left; font-size:16px" . $highlight . "'> &nbsp; <a " . $highlightlink . " href='playerstat.php?pid=" .$stats_id. "'>" . $player . "</a></td>";
 	}
 	else
 	{
-		echo "<td class='result' style='text-align:left" . $highlight . "'> &nbsp; " . $player . "</td>";
+		echo "<td class='result' style='text-align:left; font-size:16px" . $highlight . "'> &nbsp; " . $player . "</td>";
 	}
 	
-	echo "<td  width='auto' class='result' style='text-align:right" . $highlight . "'> &nbsp; " . $country_name . "</td>";
+	echo "<td  width='auto' class='result' style='text-align:right; font-size:16px" . $highlight . "'> &nbsp; " . $country_name . "</td>";
 	// if player is loading in, don't show the score, kills, deaths, or squad name
 	if($this_team == 0)
 	{
@@ -372,10 +372,10 @@ header('Refresh: 30');
 	else
 	{
 		echo "
-		<td class='result' style='text-align:left" . $highlight . "' width='65px'> &nbsp; " . $score . "</td>
-		<td class='result' style='text-align:left" . $highlight . "' width='45px'> &nbsp; " . $kills . "</td>
-		<td class='result' style='text-align:left" . $highlight . "' width='45px'> &nbsp; " . $deaths . "</td>
-		<td class='result' style='text-align:left" . $highlight . "' width='70px'> &nbsp; " . $squad_name . "</td>
+		<td class='result' style='text-align:left; font-size:16px" . $highlight . "' width='65px'> &nbsp; " . $score . "</td>
+		<td class='result' style='text-align:left; font-size:16px" . $highlight . "' width='45px'> &nbsp; " . $kills . "</td>
+		<td class='result' style='text-align:left; font-size:16px" . $highlight . "' width='45px'> &nbsp; " . $deaths . "</td>
+		<td class='result' style='text-align:left; font-size:16px" . $highlight . "' width='100px'> &nbsp; " . $squad_name . "</td>
 		</tr>
 		";
 	}
