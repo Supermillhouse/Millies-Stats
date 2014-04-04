@@ -6,6 +6,10 @@ After install, delete the install.php file, before using the system.
 
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 
+v0.0.2.1
+
+-Added Naval Strike
+
 v0.0.1.8
 
 - Change page links on players.php
