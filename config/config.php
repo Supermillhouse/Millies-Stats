@@ -50,6 +50,10 @@ else
 		case "XP0_Firestorm": $sname="Firestorm 2014"; $simage="xp0_Firestorm"; break;
 		case "XP0_Metro": $sname="Operation Metro 2014"; $simage="xp0_Metro"; break;
 		case "XP0_Oman": $sname="Gulf Of Oman 2014"; $simage="xp0_Oman"; break;
+		case "XP2_001": $sname="Lost Islands"; $simage="xp2_001"; break;
+		case "XP2_002": $sname="Nansha Strike"; $simage="xp2_002"; break;
+		case "XP2_003": $sname="Wavebreaker"; $simage="xp2_003"; break;
+		case "XP2_004": $sname="Operation Mortar"; $simage="xp2_004"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -72,6 +76,8 @@ else
     case "AirSuperiority0": $mode="Air Superiority"; $modetype="conq"; break;
     case "Elimination0": $mode="Defuse"; $modetype="conq"; break;
     case "Obliteration": $mode="Obliteration"; $modetype="conq"; break;
+    case "CarrierAssaultLarge0": $mode="Carrier Assault Large"; $modetype="conq"; break;
+    case "CarrierAssaultSmall0": $mode="Carrier Assault Small"; $modetype="conq"; break;
     case "": $mode=""; break;
 	}
 	
@@ -107,6 +113,6 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.1.8</h3>");
+	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.2.1</h3>");
 }
 ?>

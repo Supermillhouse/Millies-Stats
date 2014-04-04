@@ -50,6 +50,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "XP0_Firestorm": $sname="Firestorm 2014"; $simage="xp0_Firestorm"; break;
 		case "XP0_Metro": $sname="Operation Metro 2014"; $simage="xp0_Metro"; break;
 		case "XP0_Oman": $sname="Gulf Of Oman 2014"; $simage="xp0_Oman"; break;
+		case "XP2_001": $sname="Lost Islands"; $simage="xp2_001"; break;
+		case "XP2_002": $sname="Nansha Strike"; $simage="xp2_002"; break;
+		case "XP2_003": $sname="Wavebreaker"; $simage="xp2_003"; break;
+		case "XP2_004": $sname="Operation Mortar"; $simage="xp2_004"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"

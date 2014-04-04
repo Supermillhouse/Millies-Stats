@@ -115,8 +115,7 @@ td{
         	<td class='top' colspan="2"><center>Installation page of the server stat</center></td>
         </tr>
         <tr>
-			<td>Clan website url:</td><td><input type="text" name="clanname" value="<?php echo $_POST['clanname']; ?>" /> 
-			Your clan website</td>
+			<td>Clan website url:</td><td><input type="text" name="clanname" value="<?php echo $_POST['clanname']; ?>" />Your clan website e.g.http://www.example.com</td>
         </tr>
         <tr>
 			<td>Site language:</td><td><select name="lang" id="lang"><option value="en">English</option></select> Default value: English</td>
