@@ -111,8 +111,8 @@ else
 	define("MODETYPE", $modetype);
 	define("TEAM1SCORE", $teamscore['1']);
 //}	
-	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='messages.php'>$lng_messages</a>");
+	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='weapons.php'>$lng_weapons</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.2.1</h3>");
+	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.2.3</h3>");
 }
 ?>

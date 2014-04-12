@@ -115,12 +115,16 @@ $lng_playerstat_weapon2="Explosives";
 $lng_playerstat_weapon3="Handgun";
 $lng_playerstat_weapon4="LMG";
 $lng_playerstat_weapon5="Melee";
-$lng_playerstat_weapon6="Rockets";
+$lng_playerstat_weapon6="Explosive Projectile";
 $lng_playerstat_weapon7="Shotgun";
 $lng_playerstat_weapon8="SMG";
 $lng_playerstat_weapon9="Sniper";
+$lng_playerstat_weapon10="DMR";
+$lng_playerstat_weapon11="Impact";
+$lng_playerstat_weapon12="Carbine";
 
 $lng_playerstat_deaths_by_weap="Deaths: ";
 $lng_playerstat_kills_by_weap="Kills: ";
 $lng_playerstat_hs_by_weap="Headshots: ";
+$lng_playermax_kill_by_weap="Most Kills: ";
 ?>
