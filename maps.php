@@ -25,11 +25,11 @@ include('config/languages/'.LANG.'.php');
 <div id="body">
 <table width="100%" border="1">
 <?php
-if($maps=mysqli_query($dbconn, "SELECT `MapName` FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`<>'' AND `TimeRoundEnd`<>'0001-01-01 00:00:00' AND `ServerID`='".SWID."' GROUP BY `MapName`"))
+if($maps=mysqli_query($dbconn, "SELECT `MapName` FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`<>'' AND `TimeRoundEnd`<>'0001-01-01 00:00:00' AND `ServerID`='".SWID."' GROUP BY `MapName` ORDER BY SUM(`NumberofRounds`) DESC"))
 {
 while($mapdata=mysqli_fetch_array($maps))
 {
-	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`), MIN(`MinPlayers`), MAX(`MaxPlayers`), AVG(`AvgPlayers`), MAX(`PlayersJoinedServer`), MAX(`PlayersLeftServer`), MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."';"));
+	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`), MIN(`MinPlayers`), MAX(`MaxPlayers`), AVG(`AvgPlayers`), MAX(`PlayersJoinedServer`), MAX(`PlayersLeftServer`), MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."' AND `TimeRoundEnd`<>'0001-01-01 00:00:00';"));
 	switch($mapdata['0'])
 	{
 		case "MP_Abandoned": $sname="Zavod 311"; $simage="mp_Abandoned"; break;
