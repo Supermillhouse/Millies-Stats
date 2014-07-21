@@ -25,11 +25,11 @@ include('config/languages/'.LANG.'.php');
 <div id="body">
 <table width="100%" border="1">
 <?php
-if($maps=mysqli_query($dbconn, "SELECT `MapName` FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`<>'' AND `TimeRoundEnd`<>'0001-01-01 00:00:00' AND `ServerID`='".SWID."' GROUP BY `MapName`"))
+if($maps=mysqli_query($dbconn, "SELECT `MapName` FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`<>'' AND `TimeRoundEnd`<>'0001-01-01 00:00:00' AND `ServerID`='".SWID."' GROUP BY `MapName` ORDER BY SUM(`NumberofRounds`) DESC"))
 {
 while($mapdata=mysqli_fetch_array($maps))
 {
-	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`), MIN(`MinPlayers`), MAX(`MaxPlayers`), AVG(`AvgPlayers`), MAX(`PlayersJoinedServer`), MAX(`PlayersLeftServer`), MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."';"));
+	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`) AS 'numofrounds', MIN(`MinPlayers`) AS 'minplay', MAX(`MaxPlayers`) AS 'maxplay', AVG(`AvgPlayers`) AS 'avg', MAX(`PlayersJoinedServer`) AS 'maxjoin', MAX(`PlayersLeftServer`) AS 'maxleft', MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `tbl_mapstats` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."' AND `TimeRoundEnd`<>'0001-01-01 00:00:00'"));
 	switch($mapdata['0'])
 	{
 		case "MP_Abandoned": $sname="Zavod 311"; $simage="mp_Abandoned"; break;
@@ -54,6 +54,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "XP2_002": $sname="Nansha Strike"; $simage="xp2_002"; break;
 		case "XP2_003": $sname="Wavebreaker"; $simage="xp2_003"; break;
 		case "XP2_004": $sname="Operation Mortar"; $simage="xp2_004"; break;
+		case "XP3_MarketPl": $sname="Pearl Market"; $simage="xp3_MarketPl"; break;
+		case "XP3_Prpganda": $sname="Propaganda"; $simage="xp3_Prpganda"; break;
+		case "XP3_UrbanGdn": $sname="Lumphini Garden"; $simage="xp3_UrbanGdn"; break;
+		case "XP3_WtrFront": $sname="Sunken Dragon"; $simage="xp3_WtrFront"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"
@@ -64,10 +68,10 @@ while($mapdata=mysqli_fetch_array($maps))
 		<div class='serverdatastat'>
 		<table width='100%'>
 			<tr>
-				<td>$lng_server_rounds".$mapdatas['0']."</td><td>$lng_server_min".$mapdatas['1']."</td><td>$lng_server_max".$mapdatas['2']."</td>
+				<td>$lng_server_rounds".$mapdatas['numofrounds']."</td><td>$lng_server_min".$mapdatas['minplay']."</td><td>$lng_server_max".$mapdatas['maxplay']."</td>
 			</tr>
 			<tr>
-				<td>$lng_server_avarage".round($mapdatas['3'], 0)."</td><td>$lng_server_max_join".$mapdatas['4']."</td><td>$lng_server_max_left".$mapdatas['5']."</td>
+				<td>$lng_server_avarage".round($mapdatas['avg'], 0)."</td><td>$lng_server_max_join".$mapdatas['maxjoin']."</td><td>$lng_server_max_left".$mapdatas['maxleft']."</td>
 			</tr>
 		</table>
 		</div>

@@ -54,6 +54,10 @@ else
 		case "XP2_002": $sname="Nansha Strike"; $simage="xp2_002"; break;
 		case "XP2_003": $sname="Wavebreaker"; $simage="xp2_003"; break;
 		case "XP2_004": $sname="Operation Mortar"; $simage="xp2_004"; break;
+		case "XP3_MarketPl": $sname="Pearl Market"; $simage="xp3_MarketPl"; break;
+		case "XP3_Prpganda": $sname="Propaganda"; $simage="xp3_Prpganda"; break;
+		case "XP3_UrbanGdn": $sname="Lumphini Garden"; $simage="xp3_UrbanGdn"; break;
+		case "XP3_WtrFront": $sname="Sunken Dragon"; $simage="xp3_WtrFront"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -78,6 +82,7 @@ else
     case "Obliteration": $mode="Obliteration"; $modetype="conq"; break;
     case "CarrierAssaultLarge0": $mode="Carrier Assault Large"; $modetype="conq"; break;
     case "CarrierAssaultSmall0": $mode="Carrier Assault Small"; $modetype="conq"; break;
+    case "Chainlink0": $mode="Chain Link"; $modetype="conq"; break;
     case "": $mode=""; break;
 	}
 	
@@ -113,6 +118,28 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='weapons.php'>$lng_weapons</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
-	define("FOOTERTEXT", "  Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><br /><h3>v0.0.2.3</h3>");
+$new_version = "";
+$filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/README.md";
+$searchfor = "Version Info";
+$current_version = "v0.0.2.6";
+$version = "";
+$file = file($filename);
+$found = false;
+foreach ($file as $lineNumber => $line) {
+    if (strpos($line,$searchfor) !== false) {
+       $found = true;
+       $lineNumber++;
+       break;
+    }
+}
+if ($found) 
+{
+  $linenum = $lineNumber;
+  $lines = file($filename);
+  $new_version = $lines[$linenum+1];
+  $new_version = substr($new_version , 0, -1);  
+  if ($new_version != $current_version ) $version = "<h3> New version Available: $new_version</h3>";
+}
+	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a></br><h3>$current_version</h3>$version");
 }
 ?>

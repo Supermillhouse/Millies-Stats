@@ -7,6 +7,12 @@ After install, delete the install.php file, before using the system.
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 Version Info
 
+v0.0.2.6
+
+-Added Dragon's Teeth
+-Maps and mode only
+-No aditional weapon images at the moment as i don't have the entire list.
+
 v0.0.2.3
 
 -Added Weapon Stats
