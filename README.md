@@ -9,17 +9,17 @@ Version Info
 
 v0.0.2.6
 
--Added Dragon's Teeth
--Maps and mode only
--No aditional weapon images at the moment as i don't have the entire list.
+- Added Dragon's Teeth
+- Maps and mode only
+- No aditional weapon images at the moment as i don't have the entire list.
 
 v0.0.2.3
 
--Added Weapon Stats
+- Added Weapon Stats
 
 v0.0.2.1
 
--Added Naval Strike
+- Added Naval Strike
 
 v0.0.1.8
 
