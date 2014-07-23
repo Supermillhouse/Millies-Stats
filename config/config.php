@@ -121,7 +121,7 @@ else
 $new_version = "";
 $filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/README.md";
 $searchfor = "Version Info";
-$current_version = "v0.0.2.6";
+$current_version = "v0.0.2.7";
 $version = "";
 $file = file($filename);
 $found = false;
