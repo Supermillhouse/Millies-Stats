@@ -79,71 +79,88 @@ if(isset($_GET['pid']) && is_numeric($_GET['pid']))
 				</table>
 			</td>
 		</tr>
-	</table>";
-/*	<div class='trackersname'>$lng_playerstat_weapons</div>
+	</table>
+	<div class='trackersname'>$lng_playerstat_weapons</div>
 	<table width='100%'>
 		<tr>
 			<td>
 				<div id='TabbedPanels1' class='TabbedPanels'>
   					<ul class='TabbedPanelsTabGroup'>
    					<li class='TabbedPanelsTab' tabindex='0'>$lng_playerstat_weapon1</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_handgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'handgun');\">$lng_playerstat_weapon3</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_lmg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'lmg');\">$lng_playerstat_weapon4</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_projectileexplosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'projectile');\">$lng_playerstat_weapon6</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_shotgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'shotgun');\">$lng_playerstat_weapon7</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_smg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'smg');\">$lng_playerstat_weapon8</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_sniperrifle', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'sniper');\">$lng_playerstat_weapon9</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_melee', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'melee');\">$lng_playerstat_weapon5</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('weapons_explosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', 'explosive');\">$lng_playerstat_weapon2</li>
+						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('carbine', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon12</li>
+						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('handgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon3</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('lmg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon4</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('projectileexplosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon6</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('impact', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon11</li>
+						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('shotgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon7</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('smg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon8</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('sniperrifle', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon9</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('dmr', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon10</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('melee', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon5</li>
+    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('explosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon2</li>
   					</ul>
   					<div class='TabbedPanelsContentGroup'>
-    					<div class='TabbedPanelsContent' id='weapons_assaultrifle'>
+    					<div class='TabbedPanelsContent' id='assaultrifle'>
 						<table width='100%' class='cmess'>
 						";
-						$dir = dir("weapons/assault");
-						while (($file = $dir->read()) !== false)
-						{
-							if($file!="." && $file!="../" && $file!="./" && $file!="/" && $file!=".." && $file!="@eaDir")
-							{
-							$wname=explode(".", $file);
-			$name=$wname['0'];
-			if($weaponstat=mysqli_fetch_array(mysqli_query($dbconn, "SELECT (`".$name."_kills`), (`".$name."_hs`), (`".$name."_deaths`)  FROM `".$sqlprefix."weapons_assaultrifle".$suffix."` WHERE `StatsID`='".mysqli_real_escape_string($dbconn, $_GET['pid'])."'")))
+
+$results = mysqli_query($dbconn, "
+			SELECT tws.`WeaponID`, tw.`Friendlyname`, tws.`Kills`, tws.`Headshots`, tws.`Deaths` FROM `".$sqlprefix."weapons_stats".$suffix."` tws 
+			INNER JOIN `".$sqlprefix."weapons".$suffix."` tw ON tw.`WeaponID` = tws.`WeaponID` 
+      WHERE tws.`StatsID` = '".mysqli_real_escape_string($dbconn,$_GET['pid'])."'
+			AND tw.`Damagetype` = 'assaultrifle' ORDER BY tw.`Friendlyname` ASC");
+
+			if(mysqli_num_rows($results) > 0)
 			{
+			while($row=mysqli_fetch_array($results))
+      {
+        $weapon_name = str_replace("_"," ", $row['Friendlyname']);
+        $killcount = $row['Kills'];
+        $hscount = $row['Headshots'];
+        $deathcount = $row['Deaths']; 
+			
 							echo "
 							<tr>
-								<td align='center' width='20%'><img src='weapons/assault/".$file."' width='260px'/><br /></td><th width='20%'>$name</th><td width='20%'>$lng_playerstat_kills_by_weap ".$weaponstat[0]."</td><td width='20%'>$lng_playerstat_hs_by_weap ".$weaponstat[1]."</td><td width='20%'>$lng_playerstat_deaths_by_weap ".$weaponstat[2]."</td>
+								<td align='center' width='25%' height='140px'><img src='weapons/".$row['Friendlyname'].".png'/></td>
+								<th width='30%'>$weapon_name</th>
+								<td width='15%'>$lng_playerstat_kills_by_weap ".$killcount."</td>
+								<td width='15%'>$lng_playerstat_hs_by_weap ".$hscount."</td>
+								<td width='15%'>$lng_playerstat_deaths_by_weap ".$deathcount."</td>
 							</tr>
 							";
+			}
 			}
 			else
 			{
 				echo"
 				<tr>
-					<td align='center' width='20%'><img src='./weapons/assault/".$file."' width='260px' /><br /></td><td colspan='3'><center>$lng_no_result</center></td>
+					<td align='center' width='25%' height='140px'></td><td colspan='3'><center>$lng_no_result</center></td>
 				</tr>
 				";
 			}
-							}
-						}
-						$dir->close();
+
 						echo "
 						</table>
 						</div>
-						<div class='TabbedPanelsContent' id='weapons_handgun'></div>
-    				<div class='TabbedPanelsContent' id='weapons_lmg'></div>
-    				<div class='TabbedPanelsContent' id='weapons_projectileexplosive'></div>
-						<div class='TabbedPanelsContent' id='weapons_shotgun'></div>
-    				<div class='TabbedPanelsContent' id='weapons_smg'></div>
-						<div class='TabbedPanelsContent' id='weapons_sniperrifle'></div>
-						<div class='TabbedPanelsContent' id='weapons_melee'></div>
-						<div class='TabbedPanelsContent' id='weapons_explosive'></div>
+						<div class='TabbedPanelsContent' id='carbine'></div>
+						<div class='TabbedPanelsContent' id='handgun'></div>
+    				<div class='TabbedPanelsContent' id='lmg'></div>
+    				<div class='TabbedPanelsContent' id='projectileexplosive'></div>
+    				<div class='TabbedPanelsContent' id='impact'></div>
+						<div class='TabbedPanelsContent' id='shotgun'></div>
+    				<div class='TabbedPanelsContent' id='smg'></div>
+						<div class='TabbedPanelsContent' id='sniperrifle'></div>
+						<div class='TabbedPanelsContent' id='dmr'></div>
+						<div class='TabbedPanelsContent' id='melee'></div>
+						<div class='TabbedPanelsContent' id='explosive'></div>
   					</div>
 				</div>
 			</td>
 		</tr>
 	</table>
-	";*/
+	";
 }
+
 else
 {
 	header('location:players.php');
@@ -152,8 +169,8 @@ else
 </div>
 <div class="spacer"></div>
 <div id="footer"><?php echo FOOTERTEXT; ?></div>
-<!--<script type="text/javascript">
+<script type="text/javascript">
 var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-</script>-->
+</script>
 </body>
 </html>
