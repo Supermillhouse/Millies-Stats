@@ -29,11 +29,7 @@ if($maps=mysqli_query($dbconn, "SELECT `MapName` FROM `".$sqlprefix."mapstats".$
 {
 while($mapdata=mysqli_fetch_array($maps))
 {
-<<<<<<< HEAD
-	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`), MIN(`MinPlayers`), MAX(`MaxPlayers`), AVG(`AvgPlayers`), MAX(`PlayersJoinedServer`), MAX(`PlayersLeftServer`), MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `".$sqlprefix."mapstats".$suffix."` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."' AND `TimeRoundEnd`<>'0001-01-01 00:00:00';"));
-=======
 	$mapdatas=mysqli_fetch_array(mysqli_query($dbconn, "SELECT SUM(`NumberofRounds`) AS 'numofrounds', MIN(`MinPlayers`) AS 'minplay', MAX(`MaxPlayers`) AS 'maxplay', AVG(`AvgPlayers`) AS 'avg', MAX(`PlayersJoinedServer`) AS 'maxjoin', MAX(`PlayersLeftServer`) AS 'maxleft', MAX(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), MIN(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)), AVG(TIMEDIFF(`TimeRoundEnd`,`TimeRoundStarted`)) FROM `tbl_mapstats` WHERE `MapName`='".mysqli_real_escape_string($dbconn, $mapdata['0'])."' AND `TimeRoundEnd`<>'0001-01-01 00:00:00'"));
->>>>>>> origin/weapon-stats
 	switch($mapdata['0'])
 	{
 		case "MP_Abandoned": $sname="Zavod 311"; $simage="mp_Abandoned"; break;
