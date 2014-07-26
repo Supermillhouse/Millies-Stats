@@ -7,6 +7,10 @@ After install, delete the install.php file, before using the system.
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 Version Info
 
+v0.0.2.8
+
+- Fix maps.php error
+
 v0.0.2.7
 
 - Added Dragon's Teeth Weapons
