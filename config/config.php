@@ -121,7 +121,7 @@ else
 $new_version = "";
 $filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/README.md";
 $searchfor = "Version Info";
-$current_version = "v0.0.2.8";
+$current_version = "v0.0.2.9";
 $version = "";
 $file = file($filename);
 $found = false;
@@ -140,6 +140,6 @@ if ($found)
   $new_version = substr($new_version , 0, -1);  
   if ($new_version != $current_version ) $version = "<h3> New version Available: $new_version</h3>";
 }
-	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a></br><h3>$current_version</h3>$version");
+	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><h3>$current_version</h3>$version");
 }
 ?>
