@@ -69,7 +69,7 @@ function weaponstat(str, str2, str3)
     		document.getElementById(str).innerHTML=xmlhttp.responseText;
     	}
   	}
-xmlhttp.open("GET","config/getdata.php?weaponstat="+str+"&pid="+str2+"&weap="+str3,true);
+xmlhttp.open("GET","config/getdata.php?weaponstat="+str+"&pid="+str2,true);
 xmlhttp.send();
 }
 
@@ -90,7 +90,7 @@ function weaponstat2(str, str2)
     		document.getElementById(str).innerHTML=xmlhttp.responseText;
     	}
   	}
-xmlhttp.open("GET","config/getdata.php?weaponstatf="+str+"&weap="+str2,true);
+xmlhttp.open("GET","config/getdata.php?weaponstatf="+str,true);
 xmlhttp.send();
 }
 
