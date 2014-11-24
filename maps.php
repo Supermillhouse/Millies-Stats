@@ -8,10 +8,10 @@ include('config/languages/'.LANG.'.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="./template/images/staticon.png">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="./template/images/staticon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
-<link href="template/style.css" rel="stylesheet" type="text/css" />
+<link href="template/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -61,12 +61,12 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "XP4_Arctic": $sname="Operation Whiteout"; $simage="xp4_Arctic"; break;
 		case "XP4_SubBase": $sname="Hammerhead"; $simage="xp4_SubBase"; break;
 		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
-		case "XP4_Wlkrftry": $sname="Giants of Karelia"; $simage="xp4_Wlkrftry"; break;
+		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"
 	<tr class='cmess'>
-		<td width='250px'><img src='./maps/$simage.jpg' width='445' height='250'/></td>
+		<td width='250px'><img alt='' src='./maps/$simage.jpg' width='445' height='250'/></td>
 		<td valign='top'>
 		<div class='servername'>$sname</div>
 		<div class='serverdatastat'>

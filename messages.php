@@ -8,10 +8,10 @@ include('config/languages/'.LANG.'.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="./template/images/staticon.png">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="./template/images/staticon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
-<link href="template/style.css" rel="stylesheet" type="text/css" />
+<link href="template/style.css" rel="stylesheet" type="text/css"/>
 <script src="template/functions.js" type="text/javascript"></script>
 </head>
 
@@ -88,7 +88,7 @@ include('config/languages/'.LANG.'.php');
    			$last = '&nbsp;'; // nor the last page link
 			}
 			echo "
-				<center><form onsubmit='return false'></>$lng_search_mess &nbsp;&nbsp;&nbsp;<input type='text' name='csearch' onkeyup='searchcmess(this.value)' /></form></center>
+				<center><form action='' onsubmit='return false'>$lng_search_mess &nbsp;&nbsp;&nbsp;<input type='text' name='csearch' onkeyup='searchcmess(this.value)' /></form></center>
 				<div id='messages' style='max-width:100%;'>
 				<div class='numbers'><center>$lng_pages_full $first $prev $nav $next $last</center></div>
 				";?>

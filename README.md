@@ -12,6 +12,8 @@ v0.0.2.9
 - Add missing BF4stats.com image
 - Add Final Stand maps
 - Some bug fixing
+- Improve W3C Validity
+
 
 v0.0.2.8
 

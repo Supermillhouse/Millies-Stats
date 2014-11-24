@@ -142,19 +142,19 @@ td{
         	<td>Mysql Table suffix</td><td><input type="text" name="suffix" value="<?php echo $_POST['suffix']; ?>" /></td>
         </tr>
         <tr>
-        	<td>1st Game Server URL Code</td><td><input type="text" name="server_url_code1" value="<?php echo $_POST['server_url_code1']; ?>" /> Like: ac8ca391-f9b8-4fa6-bcec-4c369e6c40b4</td>
+        	<td>1st Game Server URL Hash</td><td><input type="text" name="server_url_code1" value="<?php echo $_POST['server_url_code1']; ?>" /> Like: ac8ca391-f9b8-4fa6-bcec-4c369e6c40b4</td>
         </tr>
         <tr>
-        	<td>2nd Game Server URL Code</td><td><input type="text" name="server_url_code2" value="<?php echo $_POST['server_url_code2']; ?>" /></td>
+        	<td>2nd Game Server URL Hash</td><td><input type="text" name="server_url_code2" value="<?php echo $_POST['server_url_code2']; ?>" /></td>
         </tr>
         <tr>
-        	<td>3rd Game Server URL Code</td><td><input type="text" name="server_url_code3" value="<?php echo $_POST['server_url_code3']; ?>" /></td>
+        	<td>3rd Game Server URL Hash</td><td><input type="text" name="server_url_code3" value="<?php echo $_POST['server_url_code3']; ?>" /></td>
         </tr>
         <tr>
-        	<td>4th Game Server URL Code</td><td><input type="text" name="server_url_code4" value="<?php echo $_POST['server_url_code4']; ?>" /></td>
+        	<td>4th Game Server URL Hash</td><td><input type="text" name="server_url_code4" value="<?php echo $_POST['server_url_code4']; ?>" /></td>
         </tr>
         <tr>
-        	<td>5th Game Server URL Code</td><td><input type="text" name="server_url_code8" value="<?php echo $_POST['server_url_code5']; ?>" /></td>
+        	<td>5th Game Server URL Hash</td><td><input type="text" name="server_url_code8" value="<?php echo $_POST['server_url_code5']; ?>" /></td>
         </tr>
         <tr>
         	<td colspan="2" style="color:red;"><center><?php echo $errormsg; ?><br /><?php echo $_SESSION['install_error']; ?></center></td>

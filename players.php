@@ -8,10 +8,10 @@ include('config/languages/'.LANG.'.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="./template/images/staticon.png">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="./template/images/staticon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
-<link href="template/style.css" rel="stylesheet" type="text/css" />
+<link href="template/style.css" rel="stylesheet" type="text/css"/>
 <script src="template/functions.js" type="text/javascript"></script>
 </head>
 
@@ -25,24 +25,24 @@ include('config/languages/'.LANG.'.php');
 <div class="spacer"><?php echo SERVERS; ?></div>
 <div id="body">
 	<div class="trackersname"><?php echo $lng_playerstop; ?></div>
-    <p><center><?php echo $lng_search_player; ?><form onsubmit="return false"><input type="text" style="width:200px" name="searchplayer" onkeyup="searchuname(this.value)"/></form></center>
-    <div name='suname' id='suname'></div></p>
+    <center><p><?php echo $lng_search_player; ?></p><form action="" onsubmit="return false"><input type="text" style="width:200px" name="searchplayer" onkeyup="searchuname(this.value)"/></form>
+    <div id='suname'></div></center>
     <table width="100%" style="text-align:center;" class='cmess'>
     	<tr>
         	<td></td>
             <td><?php echo $lng_playerstat1; ?></td>
-            <td><?php echo $lng_playerstat2; ?><br /><a href="players.php?order=Score&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Score&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat3; ?><br /><a href="players.php?order=Playtime&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Playtime&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat4; ?><br /><a href="players.php?order=Kills&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Kills&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat5; ?><br /><a href="players.php?order=Deaths&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Deaths&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat6; ?><br /><a href="players.php?order=TKs&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=TKs&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat7; ?><br /><a href="players.php?order=kd&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=kd&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat8; ?><br /><a href="players.php?order=ppm&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=ppm&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat9; ?><br /><a href="players.php?order=ppr&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=ppr&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat10; ?><br /><a href="players.php?order=Rounds&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Rounds&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat11; ?><br /><a href="players.php?order=Suicide&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Suicide&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat12; ?><br /><a href="players.php?order=Killstreak&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Killstreak&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
-            <td><?php echo $lng_playerstat13; ?><br /><a href="players.php?order=Deathstreak&where=ASC"><img src="template/images/sort_up.png" /></a><a href="players.php?order=Deathstreak&where=DESC"><img src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat2; ?><br /><a href="players.php?order=Score&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Score&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat3; ?><br /><a href="players.php?order=Playtime&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Playtime&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat4; ?><br /><a href="players.php?order=Kills&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Kills&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat5; ?><br /><a href="players.php?order=Deaths&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Deaths&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat6; ?><br /><a href="players.php?order=TKs&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=TKs&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat7; ?><br /><a href="players.php?order=kd&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=kd&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat8; ?><br /><a href="players.php?order=ppm&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=ppm&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat9; ?><br /><a href="players.php?order=ppr&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=ppr&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat10; ?><br /><a href="players.php?order=Rounds&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Rounds&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat11; ?><br /><a href="players.php?order=Suicide&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Suicide&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat12; ?><br /><a href="players.php?order=Killstreak&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Killstreak&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
+            <td><?php echo $lng_playerstat13; ?><br /><a href="players.php?order=Deathstreak&amp;where=ASC"><img alt="" src="template/images/sort_up.png" /></a><a href="players.php?order=Deathstreak&amp;where=DESC"><img alt="" src="template/images/sort_down.gif" /></a></td>
         </tr>
         <?php
 			require('config/database.php');
@@ -117,7 +117,7 @@ include('config/languages/'.LANG.'.php');
 				}
 				else
 				{
-      			$nav .= " <a href=\"$self?order=".$_GET['order']."&where=".$_GET['where']."&page=$page\">$page</a> ";
+      			$nav .= " <a href=\"$self?order=".$_GET['order']."&amp;where=".$_GET['where']."&page=$page\">$page</a> ";
 				}
    			}
 			}
@@ -166,7 +166,7 @@ include('config/languages/'.LANG.'.php');
 				echo"
 				<tr class='cmess'>
 				<td>$counter.</td>
-				<td style='text-align:justify;'><div style='float:left;'><a href='playerstat.php?pid=".$ndata['2']."'>".$ndata['0']."</a></div><div style='float:right;'><img src='flags/".(strtoupper($ndata['1'])).".gif' /></div></td>
+				<td style='text-align:justify;'><div style='float:left;'><a href='playerstat.php?pid=".$ndata['2']."'>".$ndata['0']."</a></div><div style='float:right;'><img alt='' src='flags/".(strtoupper($ndata['1'])).".gif'/></div></td>
 				<td>".$ndata['3']."</td>
 				<td>".round((($ndata['9']/3600)), 2)." H</td>
 				<td>".$ndata['4']."</td>
@@ -186,9 +186,7 @@ include('config/languages/'.LANG.'.php');
     </table>
     <?php
 	echo"
-			<div class='numbers'><center>$lng_pages_full $first $prev $nav $next $last</center></div>
-			</div>
-			";
+			<div class='numbers'><center>$lng_pages_full $first $prev $nav $next $last</center></div>";
 			?>
 </div>
 <div class="spacer"></div>

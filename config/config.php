@@ -61,7 +61,7 @@ else
 		case "XP4_Arctic": $sname="Operation Whiteout"; $simage="xp4_Arctic"; break;
 		case "XP4_SubBase": $sname="Hammerhead"; $simage="xp4_SubBase"; break;
 		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
-		case "XP4_Wlkrftry": $sname="Giants of Karelia"; $simage="xp4_Wlkrftry"; break;
+		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -142,7 +142,7 @@ if ($found)
   $lines = file($filename);
   $new_version = $lines[$linenum+1];
   $new_version = substr($new_version , 0, -1);  
-  if ($new_version != $current_version ) $version = "<h3> New version Available: $new_version</h3>";
+  if ($new_version > $current_version ) $version = "<h3> New version Available: $new_version</h3>";
 }
 	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><h3>$current_version</h3>$version");
 }
