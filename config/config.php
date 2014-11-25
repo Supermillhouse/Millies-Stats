@@ -123,8 +123,8 @@ else
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='weapons.php'>$lng_weapons</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
 $new_version = "";
-$filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/README.md";
-$searchfor = "Version Info";
+$filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/config/version.php";
+$searchfor = "Version";
 $current_version = "v0.0.2.9";
 $version = "";
 $file = file($filename);
@@ -140,7 +140,7 @@ if ($found)
 {
   $linenum = $lineNumber;
   $lines = file($filename);
-  $new_version = $lines[$linenum+1];
+  $new_version = $lines[$linenum];
   $new_version = substr($new_version , 0, -1);  
   if ($new_version > $current_version ) $version = "<h3> New version Available: $new_version</h3>";
 }
