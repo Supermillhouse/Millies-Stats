@@ -49,6 +49,8 @@ if(mysqli_num_rows($results) > 0)
 while ($row1 = mysqli_fetch_array($results))	
   {
     if ($row1['Friendlyname'] == 'dlSHTR') $row1['Friendlyname'] = 'Phantom Bow';
+    else if ($row1['Friendlyname'] == 'XP3') $row1['Friendlyname'] = 'RAWR';
+    
     $players[$p] = array ($row1['Friendlyname'], $row1['Kills'], $row1['Headshots'], $row1['Deaths'] );
     $p++;
     switch (true)    
@@ -248,6 +250,7 @@ $num_rows = count($players);
     else if (strstr($weaponstat[0], 'Claymore')) continue;
     else if (strstr($weaponstat[0], 'Gameplay')) continue;   
     else if (strstr($weaponstat[0], 'Tomahawk')) continue;
+    else if (strstr($weaponstat[0], 'XP1')) continue;
 
 							echo "
 							<tr>
@@ -324,6 +327,7 @@ if(isset($_GET['weaponstatf']))
     else $kill = $row1['Deaths_sum'];
     
     if ($row1['Friendlyname'] == 'dlSHTR') $row1['Friendlyname'] = 'Phantom Bow';
+    else if ($row1['Friendlyname'] == 'XP3') $row1['Friendlyname'] = 'RAWR';
     
     $players[$p] = array ($row1['Friendlyname'], $kill, $row1['Head_sum']);
     $p++;
@@ -524,6 +528,7 @@ if(isset($_GET['weaponstatf']))
     else if (strstr($weaponstat[0], 'Claymore')) continue;
     else if (strstr($weaponstat[0], 'Gameplay')) continue;
     else if (strstr($weaponstat[0], 'Tomahawk')) continue;
+    else if (strstr($weaponstat[0], 'XP1')) continue;
       
     $maxsoldiername = $maxplayers[$weaponstat[0]];
     $pidlink = $statsid[$weaponstat[0]];
@@ -537,6 +542,16 @@ if(isset($_GET['weaponstatf']))
     $killcount1 = $killcount['dlSHTR'];
     $deathcount1 = $deathcount['dlSHTR'];
     }
+    
+    if (strstr($weaponstat[0], 'RAWR'))
+    {
+    $maxsoldiername = $maxplayers['XP3'];
+    $pidlink = $statsid['XP3'];
+    $killcount1 = $killcount['XP3'];
+    $deathcount1 = $deathcount['XP3'];
+    }
+    
+    
     echo "        
     <tr>
     <td align='center' width='25%' height='140px'><img alt='' src='./weapons/".$weaponstat[0].".png'/></td><th width='15%'>$weapon_name</th><td width='15%'>$lng_playerstat_kills_by_weap ".$weaponstat[1]."</td><td width='15%'>$lng_playerstat_hs_by_weap ".$weaponstat[2]."</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$pidlink'>".$maxsoldiername. "<br/>" .$killcount1. " " .$lng_player_kills."<br/>" .$deathcount1. " " .$lng_player_deaths."<br/>"; if ($deathcount1==0)$deathcount1=1; echo round(($killcount1 / $deathcount1), 2). " " .$lng_player_kd."</a></td>
