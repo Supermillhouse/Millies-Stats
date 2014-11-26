@@ -48,6 +48,9 @@ if(mysqli_num_rows($results) > 0)
 {
 while ($row1 = mysqli_fetch_array($results))	
   {
+    if ($row1['Friendlyname'] == 'dlSHTR') $row1['Friendlyname'] = 'Phantom Bow';
+    else if ($row1['Friendlyname'] == 'XP3') $row1['Friendlyname'] = 'RAWR';
+    
     $players[$p] = array ($row1['Friendlyname'], $row1['Kills'], $row1['Headshots'], $row1['Deaths'] );
     $p++;
     switch (true)    
@@ -118,17 +121,13 @@ while ($row1 = mysqli_fetch_array($results))
         break;
     }
   }
+  
+function CustomSort($a, $b)
+{
+    return $a[0] < $b[0] ? -1 : 1;
+}
 
-
-
-
-
-
-
-
-
-
-
+usort($players, 'CustomSort');
 
 
 $num_rows = count($players);
@@ -140,7 +139,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/C4.png'/></td><th width='30%'>C4</th><td width='15%'>$lng_playerstat_kills_by_weap $c4_k</td><td width='15%'>$lng_playerstat_hs_by_weap $c4_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $c4_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/C4.png'/></td><th width='30%'>C4</th><td width='15%'>$lng_playerstat_kills_by_weap $c4_k</td><td width='15%'>$lng_playerstat_hs_by_weap $c4_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $c4_d</td>
       </tr>";
       $c4_k = null;
     }
@@ -148,7 +147,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/Claymore.png'/></td><th width='30%'>Claymore</th><td width='15%'>$lng_playerstat_kills_by_weap $clay_k</td><td width='15%'>$lng_playerstat_hs_by_weap $clay_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $clay_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/Claymore.png'/></td><th width='30%'>Claymore</th><td width='15%'>$lng_playerstat_kills_by_weap $clay_k</td><td width='15%'>$lng_playerstat_hs_by_weap $clay_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $clay_d</td>
       </tr>";
       $clay_k = null;
     }
@@ -156,7 +155,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_buc_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_buc_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_buc_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_buc_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_buc_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_buc_d</td>
       </tr>";
       $m26_buc_k = null;
     }
@@ -164,7 +163,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Flechette</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_flech_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_flech_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_flech_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Flechette</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_flech_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_flech_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_flech_d</td>
       </tr>";
       $m26_flech_k = null;
     }
@@ -172,7 +171,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Frag</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_frag_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_frag_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_frag_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Frag</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_frag_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_frag_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_frag_d</td>
       </tr>";
       $m26_frag_k = null;
     }
@@ -180,7 +179,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Slug</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_slug_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_slug_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_slug_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='30%'>M26 Mass Slug</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_slug_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_slug_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m26_slug_d</td>
       </tr>";
       $m26_slug_k = null;
     }
@@ -188,7 +187,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 3GL</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_3gl_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_3gl_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_3gl_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 3GL</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_3gl_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_3gl_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_3gl_d</td>
       </tr>";
       $m320_3gl_k = null;
     }
@@ -196,7 +195,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 FB</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_flash_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_flash_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_flash_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 FB</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_flash_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_flash_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_flash_d</td>
       </tr>";
       $m320_flash_k = null;
     }
@@ -204,7 +203,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 HE</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_he_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_he_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_he_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 HE</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_he_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_he_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_he_d</td>
       </tr>";
       $m320_he_k = null;
     }
@@ -212,7 +211,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 LVG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_lvg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_lvg_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_lvg_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 LVG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_lvg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_lvg_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_lvg_d</td>
       </tr>";
       $m320_lvg_k = null;
     }
@@ -220,7 +219,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 SHG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_shg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_shg_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_shg_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 SHG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_shg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_shg_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_shg_d</td>
       </tr>";
       $m320_shg_k = null;
     }
@@ -228,7 +227,7 @@ $num_rows = count($players);
     {
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='30%'>M320 SMK</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_smk_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_smk_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_smk_d</td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='30%'>M320 SMK</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_smk_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_smk_h</td><td width='15%'>$lng_playerstat_deaths_by_weap $m320_smk_d</td>
       </tr>";
       $m320_smk_k = null;
     }
@@ -251,10 +250,11 @@ $num_rows = count($players);
     else if (strstr($weaponstat[0], 'Claymore')) continue;
     else if (strstr($weaponstat[0], 'Gameplay')) continue;   
     else if (strstr($weaponstat[0], 'Tomahawk')) continue;
+    else if (strstr($weaponstat[0], 'XP1')) continue;
 
 							echo "
 							<tr>
-								<td align='center' width='25%' height='140px'><img src='weapons/".$weaponstat[0].".png'/></td>
+								<td align='center' width='25%' height='140px'><img alt='' src='weapons/".$weaponstat[0].".png'/></td>
 								<th width='30%'>$weapon_name</th>
 								<td width='15%'>$lng_playerstat_kills_by_weap ".$weaponstat[1]."</td>
 								<td width='15%'>$lng_playerstat_hs_by_weap ".$weaponstat[2]."</td>
@@ -263,43 +263,6 @@ $num_rows = count($players);
 							";
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			/*if(sizeof($players) != 0)
-			{
-			foreach($players as $row)
-      {
-        $weapon_name = str_replace("_"," ", $row['Friendlyname']);
-        $killcount = $row['Kills'];
-        $hscount = $row['Headshots'];
-        $deathcount = $row['Deaths']; 
-			
-							echo "
-							<tr>
-								<td align='center' width='25%' height='140px'><img src='weapons/".$row['Friendlyname'].".png'/></td>
-								<th width='30%'>".$row['Friendlyname']."</th>
-								<td width='15%'>$lng_playerstat_kills_by_weap ".$killcount."</td>
-								<td width='15%'>$lng_playerstat_hs_by_weap ".$hscount."</td>
-								<td width='15%'>$lng_playerstat_deaths_by_weap ".$deathcount."</td>
-							</tr>
-							";
-			}*/
 			}
 			else
 			{
@@ -362,6 +325,10 @@ if(isset($_GET['weaponstatf']))
   { 
     if ($row1['Kills_sum'] > $row1['Deaths_sum']) $kill = $row1['Kills_sum'];
     else $kill = $row1['Deaths_sum'];
+    
+    if ($row1['Friendlyname'] == 'dlSHTR') $row1['Friendlyname'] = 'Phantom Bow';
+    else if ($row1['Friendlyname'] == 'XP3') $row1['Friendlyname'] = 'RAWR';
+    
     $players[$p] = array ($row1['Friendlyname'], $kill, $row1['Head_sum']);
     $p++;
     switch (true)    
@@ -420,8 +387,16 @@ if(isset($_GET['weaponstatf']))
         break;
     }
   }
+  
+   function CustomSort($a, $b)
+  {
+    return $a[0] < $b[0] ? -1 : 1;
+  }
+  usort($players, 'CustomSort'); 
   echo "<table width='100%' class='cmess'>";
   $num_rows = count($players);
+
+  
   foreach ($players as $weaponstat)
   {
     $weapon_name = str_replace("_"," ", $weaponstat[0]);
@@ -431,7 +406,7 @@ if(isset($_GET['weaponstatf']))
     $c4_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%C4%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/C4.png'/></td><th width='15%'>C4</th><td width='15%'>$lng_playerstat_kills_by_weap $c4_k</td><td width='15%'>$lng_playerstat_hs_by_weap $c4_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$c4_k_max['StatsID']."'>".$c4_k_max['SoldierName']. " </br> " .$c4_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$c4_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($c4_k_max['Deathsmax']==0)$c4_k_max['Deathsmax']=1; echo round(($c4_k_max['Killsmax'] / $c4_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/C4.png'/></td><th width='15%'>C4</th><td width='15%'>$lng_playerstat_kills_by_weap $c4_k</td><td width='15%'>$lng_playerstat_hs_by_weap $c4_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$c4_k_max['StatsID']."'>".$c4_k_max['SoldierName']. " <br/> " .$c4_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$c4_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($c4_k_max['Deathsmax']==0)$c4_k_max['Deathsmax']=1; echo round(($c4_k_max['Killsmax'] / $c4_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $c4_k = null;
     }
@@ -440,7 +415,7 @@ if(isset($_GET['weaponstatf']))
       $clay_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%Claymore%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/Claymore.png'/></td><th width='15%'>Claymore</th><td width='15%'>$lng_playerstat_kills_by_weap $clay_k</td><td width='15%'>$lng_playerstat_hs_by_weap $clay_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$clay_k_max['StatsID']."'>".$clay_k_max['SoldierName']." </br> " .$clay_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$clay_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($clay_k_max['Deathsmax']==0)$clay_k_max['Deathsmax']=1; echo round(($clay_k_max['Killsmax'] / $clay_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/Claymore.png'/></td><th width='15%'>Claymore</th><td width='15%'>$lng_playerstat_kills_by_weap $clay_k</td><td width='15%'>$lng_playerstat_hs_by_weap $clay_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$clay_k_max['StatsID']."'>".$clay_k_max['SoldierName']." <br/> " .$clay_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$clay_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($clay_k_max['Deathsmax']==0)$clay_k_max['Deathsmax']=1; echo round(($clay_k_max['Killsmax'] / $clay_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $clay_k = null;
     }
@@ -449,7 +424,7 @@ if(isset($_GET['weaponstatf']))
       $m26_buc_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE (tw.`Friendlyname` LIKE '%M26_Buck%' OR tw.`Friendlyname` = 'M26Mass') AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_buc_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_buc_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$".$m26_buc_k_max['StatsID']."'>".$m26_buc_k_max['SoldierName']. " </br> " .$m26_buc_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m26_buc_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m26_buc_k_max['Deathsmax']==0)$m26_buc_k_max['Deathsmax']=1; echo round(($m26_buc_k_max['Killsmax'] / $m26_buc_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_buc_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_buc_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$".$m26_buc_k_max['StatsID']."'>".$m26_buc_k_max['SoldierName']. " <br/> " .$m26_buc_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m26_buc_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m26_buc_k_max['Deathsmax']==0)$m26_buc_k_max['Deathsmax']=1; echo round(($m26_buc_k_max['Killsmax'] / $m26_buc_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m26_buc_k = null;
     }
@@ -458,7 +433,7 @@ if(isset($_GET['weaponstatf']))
       $m26_flech_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE (tw.`Friendlyname` LIKE '%M26_Flechette%' OR tw.`Friendlyname` = 'M26Mass_Flechette') AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Flechette</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_flech_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_flech_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_flech_k_max['StatsID']."'>".$m26_flech_k_max['SoldierName']. " </br> " .$m26_flech_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m26_flech_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m26_flech_k_max['Deathsmax']==0)$m26_flech_k_max['Deathsmax']=1; echo round(($m26_flech_k_max['Killsmax'] / $m26_flech_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Flechette</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_flech_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_flech_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_flech_k_max['StatsID']."'>".$m26_flech_k_max['SoldierName']. " <br/> " .$m26_flech_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m26_flech_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m26_flech_k_max['Deathsmax']==0)$m26_flech_k_max['Deathsmax']=1; echo round(($m26_flech_k_max['Killsmax'] / $m26_flech_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m26_flech_k = null;
     }
@@ -467,7 +442,7 @@ if(isset($_GET['weaponstatf']))
       $m26_frag_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE (tw.`Friendlyname` LIKE '%M26_Frag%' OR tw.`Friendlyname` = 'M26Mass_Frag') AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Frag</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_frag_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_frag_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_frag_k_max['StatsID']."'>".$m26_frag_k_max['SoldierName']. " </br> " .$m26_frag_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m26_frag_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m26_frag_k_max['Deathsmax']==0)$m26_frag_k_max['Deathsmax']=1; echo round(($m26_frag_k_max['Killsmax'] / $m26_frag_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Frag</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_frag_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_frag_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_frag_k_max['StatsID']."'>".$m26_frag_k_max['SoldierName']. " <br/> " .$m26_frag_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m26_frag_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m26_frag_k_max['Deathsmax']==0)$m26_frag_k_max['Deathsmax']=1; echo round(($m26_frag_k_max['Killsmax'] / $m26_frag_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m26_frag_k = null;
     }
@@ -476,7 +451,7 @@ if(isset($_GET['weaponstatf']))
       $m26_slug_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE (tw.`Friendlyname` LIKE '%M26_Slug%' OR tw.`Friendlyname` = 'M26Mass_Slug') AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Slug</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_slug_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_slug_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_slug_k_max['StatsID']."'>".$m26_slug_k_max['SoldierName']. " </br> " .$m26_slug_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m26_slug_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m26_slug_k_max['Deathsmax']==0)$m26_slug_k_max['Deathsmax']=1; echo round(($m26_slug_k_max['Killsmax'] / $m26_slug_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M26Mass.png'/></td><th width='15%'>M26 Mass Slug</th><td width='15%'>$lng_playerstat_kills_by_weap $m26_slug_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m26_slug_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m26_slug_k_max['StatsID']."'>".$m26_slug_k_max['SoldierName']. " <br/> " .$m26_slug_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m26_slug_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m26_slug_k_max['Deathsmax']==0)$m26_slug_k_max['Deathsmax']=1; echo round(($m26_slug_k_max['Killsmax'] / $m26_slug_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m26_slug_k = null;
     }
@@ -485,7 +460,7 @@ if(isset($_GET['weaponstatf']))
       $m320_3gl_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_3GL%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 3GL</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_3gl_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_3gl_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_3gl_k_max['StatsID']."'>".$m320_3gl_k_max['SoldierName']. " </br> " .$m320_3gl_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_3gl_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_3gl_k_max['Deathsmax']==0)$m320_3gl_k_max['Deathsmax']=1; echo round(($m320_3gl_k_max['Killsmax'] / $m320_3gl_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 3GL</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_3gl_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_3gl_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_3gl_k_max['StatsID']."'>".$m320_3gl_k_max['SoldierName']. " <br/> " .$m320_3gl_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_3gl_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_3gl_k_max['Deathsmax']==0)$m320_3gl_k_max['Deathsmax']=1; echo round(($m320_3gl_k_max['Killsmax'] / $m320_3gl_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_3gl_k = null;
     }
@@ -494,7 +469,7 @@ if(isset($_GET['weaponstatf']))
       $m320_flash_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_FLASH%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 FB</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_flash_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_flash_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_flash_k_max['StatsID']."'>".$m320_flash_k_max['SoldierName']. " </br> " .$m320_flash_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_flash_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_flash_k_max['Deathsmax']==0)$m320_flash_k_max['Deathsmax']=1; echo round(($m320_flash_k_max['Killsmax'] / $m320_flash_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 FB</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_flash_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_flash_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_flash_k_max['StatsID']."'>".$m320_flash_k_max['SoldierName']. " <br/> " .$m320_flash_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_flash_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_flash_k_max['Deathsmax']==0)$m320_flash_k_max['Deathsmax']=1; echo round(($m320_flash_k_max['Killsmax'] / $m320_flash_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_flash_k = null;
     }
@@ -503,7 +478,7 @@ if(isset($_GET['weaponstatf']))
       $m320_he_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_HE%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 HE</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_he_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_he_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_he_k_max['StatsID']."'>".$m320_he_k_max['SoldierName']. " </br> " .$m320_he_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_he_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_he_k_max['Deathsmax']==0)$m320_he_k_max['Deathsmax']=1; echo round(($m320_he_k_max['Killsmax'] / $m320_he_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 HE</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_he_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_he_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_he_k_max['StatsID']."'>".$m320_he_k_max['SoldierName']. " <br/> " .$m320_he_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_he_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_he_k_max['Deathsmax']==0)$m320_he_k_max['Deathsmax']=1; echo round(($m320_he_k_max['Killsmax'] / $m320_he_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_he_k = null;
     }
@@ -512,7 +487,7 @@ if(isset($_GET['weaponstatf']))
       $m320_lvg_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_LVG%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 LVG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_lvg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_lvg_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_lvg_k_max['StatsID']."'>".$m320_lvg_k_max['SoldierName']. " </br> " .$m320_lvg_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_lvg_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_lvg_k_max['Deathsmax']==0)$m320_lvg_k_max['Deathsmax']=1; echo round(($m320_lvg_k_max['Killsmax'] / $m320_lvg_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 LVG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_lvg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_lvg_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_lvg_k_max['StatsID']."'>".$m320_lvg_k_max['SoldierName']. " <br/> " .$m320_lvg_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_lvg_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_lvg_k_max['Deathsmax']==0)$m320_lvg_k_max['Deathsmax']=1; echo round(($m320_lvg_k_max['Killsmax'] / $m320_lvg_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_lvg_k = null;
     }
@@ -521,7 +496,7 @@ if(isset($_GET['weaponstatf']))
       $m320_shg_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_SHG%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 SHG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_shg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_shg_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_shg_k_max['StatsID']."'>".$m320_shg_k_max['SoldierName']. " </br> " .$m320_shg_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_shg_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_shg_k_max['Deathsmax']==0)$m320_shg_k_max['Deathsmax']=1; echo round(($m320_shg_k_max['Killsmax'] / $m320_shg_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 SHG</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_shg_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_shg_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_shg_k_max['StatsID']."'>".$m320_shg_k_max['SoldierName']. " <br/> " .$m320_shg_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_shg_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_shg_k_max['Deathsmax']==0)$m320_shg_k_max['Deathsmax']=1; echo round(($m320_shg_k_max['Killsmax'] / $m320_shg_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_shg_k = null;
     }
@@ -530,7 +505,7 @@ if(isset($_GET['weaponstatf']))
       $m320_smk_k_max = mysqli_fetch_array(mysqli_query($dbconn, "SELECT tws.`StatsID`, SUM(tws.`Kills`) AS Killsmax, SUM(tws.`Deaths`) AS Deathsmax, tpd.`SoldierName`  FROM `".$sqlprefix."weapons".$suffix."` tw INNER JOIN `".$sqlprefix."weapons_stats".$suffix."` tws ON tw.`WeaponID` = tws.`WeaponID` INNER JOIN `".$sqlprefix."server_player".$suffix."` tsp ON tws.`StatsID` = tsp.`StatsID` INNER JOIN `".$sqlprefix."playerdata".$suffix."` tpd ON tsp.`PlayerID` = tpd.`PlayerID` WHERE tw.`Friendlyname` LIKE '%M320_SMK%' AND tsp.`ServerID` = '".SWID."' GROUP BY tws.`StatsID` ORDER BY SUM(tws.`Kills`) DESC LIMIT 1"));
       echo "        
       <tr>          
-      <td align='center' width='25%' height='140px'><img src='./weapons/M320.png'/></td><th width='15%'>M320 SMK</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_smk_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_smk_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_smk_k_max['StatsID']."'>".$m320_smk_k_max['SoldierName']. " </br> " .$m320_smk_k_max['Killsmax']. " " .$lng_player_kills." </br> " .$m320_smk_k_max['Deathsmax']. " " .$lng_player_deaths." </br> "; if ($m320_smk_k_max['Deathsmax']==0)$m320_smk_k_max['Deathsmax']=1; echo round(($m320_smk_k_max['Killsmax'] / $m320_smk_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
+      <td align='center' width='25%' height='140px'><img alt='' src='./weapons/M320.png'/></td><th width='15%'>M320 SMK</th><td width='15%'>$lng_playerstat_kills_by_weap $m320_smk_k</td><td width='15%'>$lng_playerstat_hs_by_weap $m320_smk_h</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=".$m320_smk_k_max['StatsID']."'>".$m320_smk_k_max['SoldierName']. " <br/> " .$m320_smk_k_max['Killsmax']. " " .$lng_player_kills." <br/> " .$m320_smk_k_max['Deathsmax']. " " .$lng_player_deaths." <br/> "; if ($m320_smk_k_max['Deathsmax']==0)$m320_smk_k_max['Deathsmax']=1; echo round(($m320_smk_k_max['Killsmax'] / $m320_smk_k_max['Deathsmax']), 2). " " .$lng_player_kd."</a></td>
       </tr>";
       $m320_smk_k = null;
     }
@@ -553,14 +528,33 @@ if(isset($_GET['weaponstatf']))
     else if (strstr($weaponstat[0], 'Claymore')) continue;
     else if (strstr($weaponstat[0], 'Gameplay')) continue;
     else if (strstr($weaponstat[0], 'Tomahawk')) continue;
+    else if (strstr($weaponstat[0], 'XP1')) continue;
       
     $maxsoldiername = $maxplayers[$weaponstat[0]];
     $pidlink = $statsid[$weaponstat[0]];
     $killcount1 = $killcount[$weaponstat[0]];
-    $deathcount1 = $deathcount[$weaponstat[0]];   
+    $deathcount1 = $deathcount[$weaponstat[0]];
+    
+    if (strstr($weaponstat[0], 'Phantom Bow'))
+    {
+    $maxsoldiername = $maxplayers['dlSHTR'];
+    $pidlink = $statsid['dlSHTR'];
+    $killcount1 = $killcount['dlSHTR'];
+    $deathcount1 = $deathcount['dlSHTR'];
+    }
+    
+    if (strstr($weaponstat[0], 'RAWR'))
+    {
+    $maxsoldiername = $maxplayers['XP3'];
+    $pidlink = $statsid['XP3'];
+    $killcount1 = $killcount['XP3'];
+    $deathcount1 = $deathcount['XP3'];
+    }
+    
+    
     echo "        
     <tr>
-    <td align='center' width='25%' height='140px'><img src='./weapons/".$weaponstat[0].".png'/></td><th width='15%'>$weapon_name</th><td width='15%'>$lng_playerstat_kills_by_weap ".$weaponstat[1]."</td><td width='15%'>$lng_playerstat_hs_by_weap ".$weaponstat[2]."</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$pidlink'>".$maxsoldiername. "</br>" .$killcount1. " " .$lng_player_kills."</br>" .$deathcount1. " " .$lng_player_deaths."</br>"; if ($deathcount1==0)$deathcount1=1; echo round(($killcount1 / $deathcount1), 2). " " .$lng_player_kd."</a></td>
+    <td align='center' width='25%' height='140px'><img alt='' src='./weapons/".$weaponstat[0].".png'/></td><th width='15%'>$weapon_name</th><td width='15%'>$lng_playerstat_kills_by_weap ".$weaponstat[1]."</td><td width='15%'>$lng_playerstat_hs_by_weap ".$weaponstat[2]."</td><td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$pidlink'>".$maxsoldiername. "<br/>" .$killcount1. " " .$lng_player_kills."<br/>" .$deathcount1. " " .$lng_player_deaths."<br/>"; if ($deathcount1==0)$deathcount1=1; echo round(($killcount1 / $deathcount1), 2). " " .$lng_player_kd."</a></td>
     </tr>";
   }
   echo "</table>";

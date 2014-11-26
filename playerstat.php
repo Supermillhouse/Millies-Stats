@@ -8,10 +8,10 @@ include('config/languages/'.LANG.'.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="./template/images/staticon.png" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="./template/images/staticon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
-<link href="template/style.css" rel="stylesheet" type="text/css" />
+<link href="template/style.css" rel="stylesheet" type="text/css"/>
 <script src="template/functions.js" type="text/javascript"></script>
 </head>
 
@@ -29,21 +29,21 @@ if(isset($_GET['pid']) && is_numeric($_GET['pid']))
 {
 	$playerdata=mysqli_fetch_array(mysqli_query($dbconn, "SELECT pd.SoldierName, pd.CountryCode, ps.* FROM ".$sqlprefix."server_player".$suffix." p LEFT JOIN ".$sqlprefix."playerstats".$suffix." ps ON p.StatsID=ps.StatsID LEFT JOIN ".$sqlprefix."playerdata".$suffix." pd ON pd.PlayerID=p.PlayerID WHERE p.StatsID=".mysqli_real_escape_string($dbconn, $_GET['pid']).""));
 	echo"
-	<div class='trackersname'><img src='flags/".strtoupper($playerdata['1']).".gif' title='".$playerdata['1']."'/>&nbsp;".$playerdata['0']." $lng_playerstat_name &nbsp;<img src='flags/".strtoupper($playerdata['1']).".gif' title='".$playerdata['1']."' /></div>
+	<div class='trackersname'><img alt='' src='flags/".strtoupper($playerdata['1']).".gif' title='".$playerdata['1']."'/>&nbsp;".$playerdata['0']." $lng_playerstat_name &nbsp;<img alt='' src='flags/".strtoupper($playerdata['1']).".gif' title='".$playerdata['1']."' /></div>
 	<table width='100%' style='border-bottom:1px solid #fff !important;'>
 		<tr>
 			<td colspan='2'>
-				<center>$lng_playerstat_rank <a href=\"javascript:refreshrank('".$playerdata['2']."')\"><img src='template/images/refresh.png' /></a></center>
+				<center>$lng_playerstat_rank <a href=\"javascript:refreshrank('".$playerdata['2']."')\"><img alt='' src='template/images/refresh.png' /></a></center>
 				<table width='100%'>
 					<tr class='cmess'>
 						<td style='text-align:center'>$lng_playerstat2</td><td style='text-align:center'>$lng_playerstat3</td><td style='text-align:center'>$lng_playerstat4</td><td style='text-align:center'>$lng_playerstat5</td><td style='text-align:center'>$lng_playerstat6</td><td style='text-align:center'>$lng_playerstat7</td><td style='text-align:center'>$lng_playerstat8</td><td style='text-align:center'>$lng_playerstat9</td><td style='text-align:center'>$lng_playerstat10</td><td style='text-align:center'>$lng_playerstat11</td><td style='text-align:center'>$lng_playerstat12</td><td style='text-align:center'>$lng_playerstat13</td>
 					</tr>
-					<tr id='playerrank' class='cmess'>&nbsp;</tr>
+					<tr id='playerrank' class='cmess'><td>&nbsp;</td></tr>
 				</table>
 			</td>
 		</tr>
 		<tr>
-			<td><img src='./template/images/bf3-us-assault.png' width='300px' /></td>
+			<td><img alt='' src='./template/images/bf3-us-assault.png' width='300px' /></td>
 			<td>
 				<table width='90%' cellpadding='5' cellspacing='20' style='background-image:url(template/images/bg.png); font-size:15px;'>
 					<tr>
@@ -72,9 +72,9 @@ if(isset($_GET['pid']) && is_numeric($_GET['pid']))
 						<td>$lng_playerstat_lastp ".$playerdata['12']."</td>
 					</tr>
 					<tr>
-						<td style='text-align:center;'><a href='http://battlelog.battlefield.com/bf4/user/".$playerdata['0']."/' target='_blank'><img src=\"template/images/blogbtn.png\" width='200px' /></a></td>
+						<td style='text-align:center;'><a href='http://battlelog.battlefield.com/bf4/user/".$playerdata['0']."/' target='_blank'><img alt='' src=\"template/images/blogbtn.png\" width='200px' /></a></td>
             <td></td>
-						<td style='text-align:center;'><a href='http://bf4stats.com/pc/".$playerdata['0']."/' target='_blank'><img src=\"template/images/bf4stats.png\" width='200px' /></a></td>
+						<td style='text-align:center;'><a href='http://bf4stats.com/pc/".$playerdata['0']."/' target='_blank'><img alt='' src=\"template/images/bf4stats.png\" width='200px' /></a></td>
 					</tr>
 				</table>
 			</td>
@@ -86,18 +86,18 @@ if(isset($_GET['pid']) && is_numeric($_GET['pid']))
 			<td>
 				<div id='TabbedPanels1' class='TabbedPanels'>
   					<ul class='TabbedPanelsTabGroup'>
-   					<li class='TabbedPanelsTab' tabindex='0'>$lng_playerstat_weapon1</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('carbine', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon12</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('handgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon3</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('lmg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon4</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('projectileexplosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon6</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('impact', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon11</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('shotgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon7</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('smg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon8</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('sniperrifle', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon9</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('dmr', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon10</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('melee', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon5</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat('explosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon2</li>
+   					<li class='TabbedPanelsTab'>$lng_playerstat_weapon1</li>
+						<li class='TabbedPanelsTab' onclick=\"weaponstat('carbine', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon12</li>
+						<li class='TabbedPanelsTab' onclick=\"weaponstat('handgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon3</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('lmg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon4</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('projectileexplosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon6</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('impact', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon11</li>
+						<li class='TabbedPanelsTab' onclick=\"weaponstat('shotgun', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon7</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('smg', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon8</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('sniperrifle', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon9</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('dmr', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon10</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('melee', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon5</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat('explosive', '".mysqli_real_escape_string($dbconn, $_GET['pid'])."', '');\">$lng_playerstat_weapon2</li>
   					</ul>
   					<div class='TabbedPanelsContentGroup'>
     					<div class='TabbedPanelsContent' id='assaultrifle'>
@@ -121,7 +121,7 @@ $results = mysqli_query($dbconn, "
 			
 							echo "
 							<tr>
-								<td align='center' width='25%' height='140px'><img src='weapons/".$row['Friendlyname'].".png'/></td>
+								<td align='center' width='25%' height='140px'><img alt='' src='weapons/".$row['Friendlyname'].".png'/></td>
 								<th width='30%'>$weapon_name</th>
 								<td width='15%'>$lng_playerstat_kills_by_weap ".$killcount."</td>
 								<td width='15%'>$lng_playerstat_hs_by_weap ".$hscount."</td>

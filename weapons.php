@@ -10,7 +10,7 @@ include('config/languages/'.LANG.'.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="shortcut icon" href="./template/images/staticon.png">
+<link rel="shortcut icon" href="./template/images/staticon.png"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
 <link href="template/style.css" rel="stylesheet" type="text/css" />
@@ -32,18 +32,18 @@ include('config/languages/'.LANG.'.php');
 echo"
 <div id='TabbedPanels1' class='TabbedPanels'>
         <ul class='TabbedPanelsTabGroup'>
-            <li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('assaultrifle', '');\">$lng_playerstat_weapon1</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('carbine', '');\">$lng_playerstat_weapon12</li>
-            <li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('handgun', '');\">$lng_playerstat_weapon3</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('lmg', '');\">$lng_playerstat_weapon4</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('projectileexplosive', '');\">$lng_playerstat_weapon6</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('impact', '');\">$lng_playerstat_weapon11</li>
-						<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('shotgun', '');\">$lng_playerstat_weapon7</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('smg', '');\">$lng_playerstat_weapon8</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('sniperrifle', '');\">$lng_playerstat_weapon9</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('dmr', '');\">$lng_playerstat_weapon10</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('melee', '');\">$lng_playerstat_weapon5</li>
-    				<li class='TabbedPanelsTab' tabindex='0' onclick=\"weaponstat2('explosive', '');\">$lng_playerstat_weapon2</li>
+            <li class='TabbedPanelsTab' onclick=\"weaponstat2('assaultrifle', '');\">$lng_playerstat_weapon1</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('carbine', '');\">$lng_playerstat_weapon12</li>
+            <li class='TabbedPanelsTab' onclick=\"weaponstat2('handgun', '');\">$lng_playerstat_weapon3</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('lmg', '');\">$lng_playerstat_weapon4</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('projectileexplosive', '');\">$lng_playerstat_weapon6</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('impact', '');\">$lng_playerstat_weapon11</li>
+						<li class='TabbedPanelsTab' onclick=\"weaponstat2('shotgun', '');\">$lng_playerstat_weapon7</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('smg', '');\">$lng_playerstat_weapon8</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('sniperrifle', '');\">$lng_playerstat_weapon9</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('dmr', '');\">$lng_playerstat_weapon10</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('melee', '');\">$lng_playerstat_weapon5</li>
+    				<li class='TabbedPanelsTab' onclick=\"weaponstat2('explosive', '');\">$lng_playerstat_weapon2</li>
         </ul>
   			<div class='TabbedPanelsContentGroup'>
     		<div class='TabbedPanelsContent' id='weapons_assaultrifle'>
@@ -120,11 +120,11 @@ $pidlink = $statsid[$row['Friendlyname']];
 $killcount1 = $killcount[$row['Friendlyname']];
 $deathcount1 = $deathcount[$row['Friendlyname']]; 
 echo "<tr>
-				<td align='center' width='25%' height='140px'><img src='weapons/".$row['Friendlyname'].".png'/></td>
+				<td align='center' width='25%' height='140px'><img alt='' src='weapons/".$row['Friendlyname'].".png'/></td>
         <th width='15%'>$weapon_name</th>
 				<td width='15%'>$lng_playerstat_kills_by_weap $kill</td>
 				<td width='15%'>$lng_playerstat_hs_by_weap ".$row['Head_sum']."</td>
-				<td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$pidlink'>".$maxsoldiername. " </br>" .$killcount1. " " .$lng_player_kills."</br>" .$deathcount1. " " .$lng_player_deaths."</br>"; if ($deathcount1==0)$deathcount1=1; echo round(($killcount1 / $deathcount1), 2). " " .$lng_player_kd."</a></td>
+				<td width='30%'>$lng_playermax_kill_by_weap <a href='playerstat.php?pid=$pidlink'>".$maxsoldiername. " <br/>" .$killcount1. " " .$lng_player_kills."<br/>" .$deathcount1. " " .$lng_player_deaths."<br/>"; if ($deathcount1==0)$deathcount1=1; echo round(($killcount1 / $deathcount1), 2). " " .$lng_player_kd."</a></td>
 			</tr>";
 }
 echo "</table>";

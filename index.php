@@ -18,9 +18,9 @@ header('Refresh: 30');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="shortcut icon" href="./template/images/staticon.png"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo $serverinfo['1']; ?> Server stats</title>
-<link href="template/style.css" rel="stylesheet" type="text/css" />
+<link href="template/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ header('Refresh: 30');
             <table align="right" width="100%" border="0">
   <tr>
     <td><?php echo $lng_slots ?></td>
-    <td class="result"><?php echo $serverinfo['2']."/".$serverinfo['3'] ?>
+    <td class="result"><?php echo $serverinfo['2']."/".$serverinfo['3'] ?></td>
     <td><?php echo $lng_mode ?></td>
     <td class="result"><?php echo SMODE; ?></td>
     <td><?php echo $lng_map ?></td>

@@ -58,6 +58,10 @@ else
 		case "XP3_Prpganda": $sname="Propaganda"; $simage="xp3_Prpganda"; break;
 		case "XP3_UrbanGdn": $sname="Lumphini Garden"; $simage="xp3_UrbanGdn"; break;
 		case "XP3_WtrFront": $sname="Sunken Dragon"; $simage="xp3_WtrFront"; break;
+		case "XP4_Arctic": $sname="Operation Whiteout"; $simage="xp4_Arctic"; break;
+		case "XP4_SubBase": $sname="Hammerhead"; $simage="xp4_SubBase"; break;
+		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
+		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -118,28 +122,37 @@ else
 //}	
 	define("MENU", "<a href='index.php'>$lng_home</a><a href='players.php'>$lng_players</a><a href='maps.php'>$lng_maps</a><a href='weapons.php'>$lng_weapons</a><a href='messages.php'>$lng_messages</a>");
 //	<a href='weapons.php'>$lng_weapons</a>
+
+$filename1 = "config/version.txt";
+$linenum1 = 1;
+$lines1 = file($filename1);
+$current_version = $lines1[$linenum1]; 
+
 $new_version = "";
-$filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/README.md";
-$searchfor = "Version Info";
-$current_version = "v0.0.2.8";
+$filename = "https://raw.githubusercontent.com/Supermillhouse/Millies-Stats/master/config/version.txt";
+$searchfor = "Version";
 $version = "";
-$file = file($filename);
 $found = false;
-foreach ($file as $lineNumber => $line) {
+$file = file($filename);
+if (strpos($file[0],$searchfor) !== false)
+{
+$new_version = $file[1];
+$found = true;
+}
+/*foreach ($file as $lineNumber => $line) {
     if (strpos($line,$searchfor) !== false) {
        $found = true;
-       $lineNumber++;
+       $test = $lineNumber++;
        break;
     }
-}
+}*/
 if ($found) 
 {
-  $linenum = $lineNumber;
+  /*$linenum = $lineNumber;
   $lines = file($filename);
-  $new_version = $lines[$linenum+1];
-  $new_version = substr($new_version , 0, -1);  
-  if ($new_version != $current_version ) $version = "<h3> New version Available: $new_version</h3>";
+  $new_version = $lines[$linenum]; */
+  if ($new_version > $current_version ) $version = "<h3> New version Available: $new_version</h3>";
 }
-	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a></br><h3>$current_version</h3>$version");
+	define("FOOTERTEXT", "Original Code and Design By: <a href='http://www.multi-gaming.hu/index.php' target='_blank'>[RMG] Dr4k3</a> &copy; 2012 | Live Server Stats: <a href='http://www.thetacteam.info' target='_blank'>[TTT] ty_ger07</a> | Modified and Maintained By : <a href='http://www.slagsareus.com' target='_blank'>[SLAG] Supermillhouse</a> | Procon plugin by: <a href='https://forum.myrcon.com/showthread.php?6698' target='_blank'>XpKiller</a><br/><h3>$current_version</h3>$version");
 }
 ?>

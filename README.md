@@ -7,6 +7,19 @@ After install, delete the install.php file, before using the system.
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 Version Info
 
+v0.0.3.0
+
+- Remove XP1 Weapon
+- Add RAWR
+- Add Final Stand Weapons
+
+v0.0.2.9
+
+- Add missing BF4stats.com image
+- Add Final Stand maps
+- Some bug fixing
+- Improve W3C Validity
+
 v0.0.2.8
 
 - Fix maps.php error
@@ -100,3 +113,4 @@ Messages
 - List all messages
 
 - Search chat player or message
+
