@@ -62,6 +62,7 @@ while($mapdata=mysqli_fetch_array($maps))
 		case "XP4_SubBase": $sname="Hammerhead"; $simage="xp4_SubBase"; break;
 		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
 		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
+		case "XP5_Night_01": $sname="Zavod:Graveyard Shift"; $simage="xp5_Night_01"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	echo"

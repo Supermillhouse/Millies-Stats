@@ -7,6 +7,11 @@ After install, delete the install.php file, before using the system.
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 Version Info
 
+v0.0.3.1
+
+- Add Zavod Graveyard Shift
+- Add Spring 2015 Patch Weapons
+
 v0.0.3.0
 
 - Remove XP1 Weapon

@@ -62,6 +62,7 @@ else
 		case "XP4_SubBase": $sname="Hammerhead"; $simage="xp4_SubBase"; break;
 		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
 		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
+		case "XP5_Night_01": $sname="Zavod:Graveyard Shift"; $simage="xp5_Night_01"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -78,6 +79,7 @@ else
 		case "TeamDeathMatchC0": $mode="TDM Close Quarters"; $modetype="conq"; break;	
     case "Domination0": $mode="Conquest Domination"; $modetype="conq"; break;
     case "GunMaster0": $mode="Gun Master"; $modetype="conq"; break;
+    case "GunMaster1": $mode="Gun Master"; $modetype="conq"; break;
     case "TankSuperiority0": $mode="Tank Superiority"; $modetype="conq"; break;
     case "Scavenger0": $mode="Scavenger"; $modetype="conq"; break;
     case "CaptureTheFlag0": $mode="Capture The Flag"; $modetype="conq"; break;
