@@ -7,6 +7,12 @@ After install, delete the install.php file, before using the system.
 If you need any help, contact Supermillhouse via PM at forum.myrcon.com
 Version Info
 
+v0.0.3.2
+
+- Add M60ULT
+- Operation Outbreak
+- Dragon Valley 2015
+
 v0.0.3.1
 
 - Add Zavod Graveyard Shift
