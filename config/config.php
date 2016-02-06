@@ -63,6 +63,8 @@ else
 		case "XP4_Titan": $sname="Hangar 21"; $simage="xp4_Titan"; break;
 		case "XP4_WlkrFtry": $sname="Giants of Karelia"; $simage="xp4_WlkrFtry"; break;
 		case "XP5_Night_01": $sname="Zavod:Graveyard Shift"; $simage="xp5_Night_01"; break;
+		case "XP6_CMP": $sname="Operation Outbreak"; $simage="xp6_CMP"; break;
+		case "XP7_Valley": $sname="Dragon Valley 2015"; $simage="xp7_Valley"; break;
 		case "": $sname=""; $simage=""; break;
 	}
 	switch($playmode)
@@ -72,7 +74,9 @@ else
 		case "RushLarge0": $mode="Rush"; $modetype="rush"; break;
 		case "SquadRush0": $mode="Squad Rush"; $modetype="rush"; break;
 		case "SquadDeathMatch0": $mode="Squad Deathmatch"; $modetype="sdm"; break;
-		case "TeamDeathMatch0": $mode="Team Deathmatch"; $modetype="conq"; break;	
+		case "SquadDeathMatch1": $mode="Squad Deathmatch"; $modetype="sdm"; break;
+		case "TeamDeathMatch0": $mode="Team Deathmatch"; $modetype="conq"; break;
+		case "TeamDeathMatch1": $mode="Team Deathmatch"; $modetype="conq"; break;	
 		case "ConquestAssaultLarge0": $mode="Conquest Assault 64"; $modetype="conq"; break;
 		case "ConquestAssaultSmall0": $mode="Conquest Assault"; $modetype="conq"; break;
 		case "ConquestAssaultSmall1": $mode="Conquest Assault"; $modetype="conq"; break;
